@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Palette taken from the film's end card — near-black with a deep green
+ * glow — so the site and the video read as one thing.
+ */
+@theme {
+  --color-ink: #050806;
+  --color-ink-2: #0a0f0c;
+  --color-moss: #0e3e2c;
+  --color-moss-lit: #1c6a4a;
+  --color-signal: #4ade9a;
+  --color-bone: #f4f6f4;
+  --color-mute: #8fa99a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: var(--color-bone);
+  -webkit-font-smoothing: antialiased;
 }
+
+/* The radial wash behind the hero, matching the end card. */
+.glow {
+  background:
+    radial-gradient(60% 55% at 50% 38%, rgba(28, 106, 74, 0.55) 0%, transparent 70%),
+    radial-gradient(40% 40% at 80% 10%, rgba(74, 222, 154, 0.10) 0%, transparent 70%);
+}
+
+.rule { border-color: rgba(143, 169, 154, 0.16); }
