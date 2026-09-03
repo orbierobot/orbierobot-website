@@ -120,8 +120,55 @@ section{padding:100px 60px;position:relative;z-index:1}
 @keyframes dotPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,170,0.4)}50%{opacity:0.5;box-shadow:0 0 0 6px rgba(0,212,170,0)}}
 .viewer-info{margin-top:16px;font-size:13px;color:rgba(255,255,255,0.25);letter-spacing:0.5px}
 
-/* ===== FEATURES ===== */
+/* ===== BUILDING THE ROBOT ===== */
+.building{background:linear-gradient(180deg,#0a0a14 0%,#07070d 100%)}
+.gen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.gen-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:0;overflow:hidden;transition:all 0.4s;position:relative}
+.gen-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(108,99,255,0.15);transform:translateY(-4px)}
+.gen-card .gen-head{padding:28px 28px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.gen-card .gen-num{font-family:'JetBrains Mono',monospace;font-size:13px;color:#6c63ff;font-weight:500;letter-spacing:0.5px}
+.gen-card .gen-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.25);letter-spacing:0.3px}
+.gen-card .gen-label{display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:3px 12px;border-radius:4px;margin:4px 28px 0}
+.gen-card .gen-label.v1{background:rgba(108,99,255,0.12);color:#6c63ff}
+.gen-card .gen-label.v2{background:rgba(0,212,170,0.12);color:#00d4aa}
+.gen-card .gen-label.v3{background:rgba(255,107,157,0.12);color:#ff6b9d}
+.gen-card .gen-body{padding:20px 28px 28px}
+.gen-card h3{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-0.3px}
+.gen-card .gen-sub{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:12px;font-family:'JetBrains Mono',monospace;letter-spacing:0.5px}
+.gen-card p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7}
+.gen-card .gen-count{font-size:36px;font-weight:800;font-family:'JetBrains Mono',monospace;color:rgba(108,99,255,0.08);position:absolute;bottom:16px;right:20px;pointer-events:none}
+.gen-card .gen-divider{height:3px;width:100%;background:linear-gradient(90deg,transparent,currentColor,transparent);opacity:0.15}
+.gen-card:hover .gen-divider{opacity:0.3}
+.gen-card.v1-card .gen-divider{color:#6c63ff}
+.gen-card.v2-card .gen-divider{color:#00d4aa}
+.gen-card.v3-card .gen-divider{color:#ff6b9d}
+
+/* ===== FEATURES TABLE ===== */
 .features{background:linear-gradient(180deg,#07070d 0%,#0a0a14 100%)}
+.features-intro{text-align:center;max-width:700px;margin:0 auto 48px;font-size:15px;color:rgba(255,255,255,0.5);line-height:1.8}
+.spec-table{max-width:1000px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02)}
+.spec-table .t-head{display:grid;grid-template-columns:1fr 1.5fr 3fr;background:rgba(108,99,255,0.08);border-bottom:1px solid rgba(108,99,255,0.1)}
+.spec-table .t-head span{padding:16px 20px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:#6c63ff}
+.spec-table .t-row{display:grid;grid-template-columns:1fr 1.5fr 3fr;border-bottom:1px solid rgba(255,255,255,0.03);transition:background 0.3s}
+.spec-table .t-row:last-child{border-bottom:none}
+.spec-table .t-row:hover{background:rgba(108,99,255,0.04)}
+.spec-table .t-row span{padding:14px 20px;font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6}
+.spec-table .t-row span:first-child{font-weight:600;color:#6c63ff;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.spec-table .t-row span:nth-child(2){font-weight:500;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px}
+
+/* ===== HISTORY ===== */
+.history{background:linear-gradient(180deg,#0a0a14 0%,#07070d 100%)}
+.history-intro{text-align:center;max-width:600px;margin:0 auto 12px;font-size:14px;color:rgba(255,255,255,0.4);font-style:italic}
+.history-timeline{max-width:800px;margin:0 auto;position:relative}
+.history-timeline::before{content:'';position:absolute;left:120px;top:0;bottom:0;width:1.5px;background:linear-gradient(180deg,rgba(108,99,255,0.3),transparent)}
+.history-item{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;position:relative}
+.history-item::before{content:'';position:absolute;left:116px;top:28px;width:9px;height:9px;border-radius:50%;background:#6c63ff;border:2px solid #0a0a14;z-index:1}
+.history-item .h-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.35);padding-top:4px;text-align:right}
+.history-item .h-text{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;padding:4px 0 4px 20px;border-left:1px solid rgba(108,99,255,0.08)}
+.history-item .h-text .quote{color:rgba(255,255,255,0.7);font-style:italic}
+.history-meta{text-align:center;margin-top:48px;padding:24px;background:rgba(108,99,255,0.04);border:1px solid rgba(108,99,255,0.08);border-radius:12px}
+.history-meta p{font-size:14px;color:rgba(255,255,255,0.45);font-family:'JetBrains Mono',monospace;letter-spacing:0.5px}
+.history-meta strong{color:#fff}
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
 .feature-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:32px 26px;transition:all 0.4s;position:relative;overflow:hidden;cursor:default}
 .feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#6c63ff,transparent);opacity:0;transition:opacity 0.4s}
@@ -215,10 +262,11 @@ footer .footer-links a:hover{color:#fff}
   <div class="logo">Orbie<span>Robot</span></div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#showcase">Video</a></li>
-    <li><a href="#viewer">Robot</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#articles">Articles</a></li>
+        <li><a href="#showcase">Video</a></li>
+        <li><a href="#viewer">Robot</a></li>
+        <li><a href="#building">Building</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#history">History</a></li>
     <li><a href="https://github.com/orbierobot/orbierobot-firmware" target="_blank" class="github-btn">GitHub</a></li>
   </ul>
 </nav>
@@ -339,44 +387,75 @@ footer .footer-links a:hover{color:#fff}
   </div>
 </section>
 
-<!-- ===== FEATURES ===== -->
+<!-- ===== BUILDING THE ROBOT ===== -->
+<section id="building" class="building">
+  <div class="section-header reveal">
+    <div class="section-label"><span class="line"></span>01 — Three Generations</div>
+    <h2 class="section-title">Built Three Times in Eight Months</h2>
+    <p class="section-subtitle">From a transparent ball to a companion with a face. OrbieRobot evolved through three distinct generations in under a year.</p>
+  </div>
+  <div class="gen-grid">
+    <div class="gen-card v1-card reveal">
+      <div class="gen-divider"></div>
+      <div class="gen-head">
+        <span class="gen-num">V1</span>
+        <span class="gen-date">Jul — Sep 2025</span>
+      </div>
+      <div class="gen-label v1">The Ball</div>
+      <div class="gen-body">
+        <h3>A Replication</h3>
+        <p class="gen-sub">A replica of the open-source ESP-ROLL project, built to learn what would and would not work. Transparent shell, everything visible.</p>
+        <p>Large battery at the bottom doubled as ballast to make the ball roll. The motors and PCB barely fit the 3D-printed parts. Speaker worked, but the sound was too low.</p>
+      </div>
+      <span class="gen-count">01</span>
+    </div>
+    <div class="gen-card v2-card reveal">
+      <div class="gen-divider"></div>
+      <div class="gen-head">
+        <span class="gen-num">V2</span>
+        <span class="gen-date">Sep 2025 — Jan 2026</span>
+      </div>
+      <div class="gen-label v2">Ten Units</div>
+      <div class="gen-body">
+        <h3>Our Own Rolling Design</h3>
+        <p class="gen-sub">Built ten times over. Still transparent, still nothing hidden.</p>
+        <p>We received the wrong part number — DRV8834 instead of DRV8833, but made it work. First full unit assembled 14 Oct 2025. Learned what mattered and what could be cut. Firmware running on ESP-IDF from day one.</p>
+      </div>
+      <span class="gen-count">10</span>
+    </div>
+    <div class="gen-card v3-card reveal">
+      <div class="gen-divider"></div>
+      <div class="gen-head">
+        <span class="gen-num">V3</span>
+        <span class="gen-date">2026 — Current</span>
+      </div>
+      <div class="gen-label v3">The Companion</div>
+      <div class="gen-body">
+        <h3>A Complete Rethink</h3>
+        <p class="gen-sub">Two wheels, a tilting head, dot-matrix eyes that emote.</p>
+        <p>It stopped being a ball and started being someone. The LED face chosen over RGB in December 2025. Three servos for head tilting — enough movement to read as attention rather than animation. The OrbieRobot we know today.</p>
+      </div>
+      <span class="gen-count">V3</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES SPECS ===== -->
 <section id="features" class="features">
   <div class="section-header reveal">
-    <div class="section-label"><span class="line"></span>Capabilities</div>
-    <h2 class="section-title">What OrbieRobot Can Do</h2>
-    <p class="section-subtitle">A rich feature set packed into an open, hackable platform.</p>
+    <div class="section-label"><span class="line"></span>02 — Specifications</div>
+    <h2 class="section-title">The Whole Thing Runs on a Few-Dollar Chip</h2>
+    <p class="section-subtitle">Every component was chosen for performance, availability, and hackability. No proprietary parts, no vendor lock-in.</p>
   </div>
-  <div class="features-grid">
-    <div class="feature-card reveal" onmousemove="this.style.setProperty('--mx',event.offsetX/this.offsetWidth*100+'%');this.style.setProperty('--my',event.offsetY/this.offsetHeight*100+'%')">
-      <div class="icon purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></div>
-      <h3>Two-Way Communication</h3>
-      <p>Built-in microphone and speaker let you talk to your pet and hear them respond. Real-time audio streaming over WiFi means you are always connected.</p>
-    </div>
-    <div class="feature-card reveal" onmousemove="this.style.setProperty('--mx',event.offsetX/this.offsetWidth*100+'%');this.style.setProperty('--my',event.offsetY/this.offsetHeight*100+'%')">
-      <div class="icon teal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      <h3>Live Camera Feed</h3>
-      <p>OV2640 camera delivers smooth video streaming to your phone or computer. Check in on your pets anytime with a live view and motion detection.</p>
-    </div>
-    <div class="feature-card reveal" onmousemove="this.style.setProperty('--mx',event.offsetX/this.offsetWidth*100+'%');this.style.setProperty('--my',event.offsetY/this.offsetHeight*100+'%')">
-      <div class="icon pink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-      <h3>Fully Programmable</h3>
-      <p>Powered by ESP32-S3 with ESP-IDF. Customize motor behavior, LED face expressions, audio responses, and sensor logic. The full firmware is open source.</p>
-    </div>
-    <div class="feature-card reveal" onmousemove="this.style.setProperty('--mx',event.offsetX/this.offsetWidth*100+'%');this.style.setProperty('--my',event.offsetY/this.offsetHeight*100+'%')">
-      <div class="icon purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-      <h3>Autonomous Movement</h3>
-      <p>Dual DRV8833 motor drivers with differential steering give OrbieRobot precise, smooth mobility. Program patrol routes or follow-behind behavior.</p>
-    </div>
-    <div class="feature-card reveal" onmousemove="this.style.setProperty('--mx',event.offsetX/this.offsetWidth*100+'%');this.style.setProperty('--my',event.offsetY/this.offsetHeight*100+'%')">
-      <div class="icon teal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-      <h3>LED Matrix Face</h3>
-      <p>IS31FL3733-driven LED matrix provides a rich, animated face with expressive eyes and moods. The face is fully customizable through software.</p>
-    </div>
-    <div class="feature-card reveal" onmousemove="this.style.setProperty('--mx',event.offsetX/this.offsetWidth*100+'%');this.style.setProperty('--my',event.offsetY/this.offsetHeight*100+'%')">
-      <div class="icon pink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-      <h3>Built by a Community</h3>
-      <p>OrbieRobot thrives on contributions. From hardware revisions to software features, the community drives every improvement. Join the movement.</p>
-    </div>
+  <div class="features-intro reveal">All of OrbieRobot is built from off-the-shelf parts. Here is exactly what goes into one.</div>
+  <div class="spec-table reveal">
+    <div class="t-head"><span>Category</span><span>Component</span><span>Description</span></div>
+    <div class="t-row"><span>COMPUTE</span><span>Seeed XIAO ESP32-S3</span><span>A few dollars. Runs perception, audio and motor control.</span></div>
+    <div class="t-row"><span>VISION</span><span>OV5640 camera module</span><span>Mounted on the head, above the display.</span></div>
+    <div class="t-row"><span>DRIVE</span><span>N20 gear motors · DRV8833</span><span>Brushed DC. The driver is a part we once ordered wrong.</span></div>
+    <div class="t-row"><span>HEAD</span><span>3 × servo, tilting</span><span>Enough movement to read as attention rather than animation.</span></div>
+    <div class="t-row"><span>DISPLAY</span><span>Dot-matrix LED eyes</span><span>Monochrome. Chosen over RGB in December 2025.</span></div>
+    <div class="t-row"><span>POWER</span><span>1 × 18650 cell</span><span>In V1 it doubled as the ballast that made the ball roll.</span></div>
   </div>
 </section>
 
@@ -405,32 +484,47 @@ footer .footer-links a:hover{color:#fff}
   </div>
 </section>
 
-<!-- ===== QUOTE ===== -->
-<section class="quote-section">
-  <div class="quote-text reveal">The best pet technology shouldn't be locked behind a paywall. OrbieRobot is built by the community, for the pets we love. Every contribution makes it better.</div>
-  <div class="quote-author reveal">— OrbieRobot Community</div>
-</section>
-
-<!-- ===== ARTICLES ===== -->
-<section id="articles" class="articles">
+<!-- ===== HISTORY ===== -->
+<section id="history" class="history">
   <div class="section-header reveal">
-    <div class="section-label"><span class="line"></span>Articles</div>
-    <h2 class="section-title">Deep Dives into OrbieRobot</h2>
-    <p class="section-subtitle">In-depth explorations of what OrbieRobot makes possible for pets, makers, and researchers.</p>
+    <div class="section-label"><span class="line"></span>03 — History</div>
+    <h2 class="section-title">Including the Parts That Went Wrong</h2>
+    <p class="section-subtitle">1,299 messages between July 2025 and March 2026. These are verbatim.</p>
   </div>
-  <div class="articles-grid">
-    <div class="article-card reveal">
-      <div class="art-img"><svg viewBox="0 0 240 160" fill="none"><circle cx="120" cy="70" r="40" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.2)" stroke-width="1"/><circle cx="120" cy="70" r="25" fill="rgba(108,99,255,0.15)"/><path d="M60 130 Q80 90 120 70 Q160 90 180 130" stroke="rgba(0,212,170,0.2)" stroke-width="2" fill="none"/><circle cx="120" cy="70" r="8" fill="#6c63ff" opacity="0.4"/><line x1="120" y1="70" x2="120" y2="50" stroke="rgba(108,99,255,0.2)" stroke-width="1"/><line x1="120" y1="70" x2="140" y2="60" stroke="rgba(108,99,255,0.15)" stroke-width="1"/><line x1="120" y1="70" x2="100" y2="60" stroke="rgba(108,99,255,0.15)" stroke-width="1"/></svg></div>
-      <div class="art-body"><div class="art-tag">Technology</div><h3>Why Open Source Robotics Matters for Pet Care</h3><p>Closed ecosystems limit innovation. OrbieRobot breaks the mold by giving everyone access to the full stack -- from motor control to camera pipeline tuning. The community advances faster together.</p><a href="#" class="read-more">Read More <span>&rarr;</span></a></div>
+  <div class="history-timeline reveal">
+    <div class="history-item">
+      <span class="h-date">21 Jul 2025</span>
+      <div class="h-text"><span class="quote">"We talking about 2 weeks to replicate this first."</span></div>
     </div>
-    <div class="article-card reveal">
-      <div class="art-img"><svg viewBox="0 0 240 160" fill="none"><rect x="70" y="30" width="100" height="70" rx="10" fill="rgba(0,212,170,0.08)" stroke="rgba(0,212,170,0.2)" stroke-width="1"/><circle cx="95" cy="55" r="5" fill="#00d4aa" opacity="0.6"/><circle cx="145" cy="55" r="5" fill="#00d4aa" opacity="0.6"/><path d="M120 65 L130 80 L110 80Z" fill="rgba(0,212,170,0.15)"/><rect x="85" y="85" width="70" height="8" rx="4" fill="rgba(0,212,170,0.1)"/><ellipse cx="85" cy="105" rx="18" ry="6" fill="rgba(255,255,255,0.05)"/><ellipse cx="155" cy="105" rx="18" ry="6" fill="rgba(255,255,255,0.05)"/><rect x="105" y="100" width="30" height="12" rx="4" fill="rgba(108,99,255,0.15)"/></svg></div>
-      <div class="art-body"><div class="art-tag">Hardware</div><h3>Inside the OrbieRobot Architecture: ESP32-S3 Deep Dive</h3><p>The ESP32-S3 is the brain of OrbieRobot, chosen for dual-core processing, WiFi, BLE, and rich peripheral set. Every component was selected for performance and hackability.</p><a href="#" class="read-more">Read More <span>&rarr;</span></a></div>
+    <div class="history-item">
+      <span class="h-date">22 Jul 2025</span>
+      <div class="h-text"><span class="quote">"Large battery at the bottom that also acts as weight to make the ball move."</span></div>
     </div>
-    <div class="article-card reveal">
-      <div class="art-img"><svg viewBox="0 0 240 160" fill="none"><ellipse cx="90" cy="100" rx="35" ry="25" fill="rgba(108,99,255,0.06)"/><circle cx="75" cy="80" r="16" fill="rgba(108,99,255,0.08)"/><circle cx="72" cy="78" r="2" fill="rgba(108,99,255,0.3)"/><ellipse cx="150" cy="100" rx="28" ry="20" fill="rgba(255,107,157,0.06)"/><circle cx="140" cy="82" r="14" fill="rgba(255,107,157,0.08)"/><circle cx="137" cy="80" r="2" fill="rgba(255,107,157,0.3)"/><path d="M120 120 Q110 108 120 100 Q130 108 120 120Z" fill="rgba(255,107,157,0.15)"/><path d="M55 130 Q70 115 90 130" stroke="rgba(108,99,255,0.15)" stroke-width="1.5" fill="none"/><path d="M185 130 Q170 115 150 130" stroke="rgba(255,107,157,0.15)" stroke-width="1.5" fill="none"/></svg></div>
-      <div class="art-body"><div class="art-tag">Community</div><h3>Building a Community Around Open Pet Technology</h3><p>OrbieRobot is more than hardware -- it is a growing community of pet lovers, roboticists, and makers building custom integrations, treat dispensers, and health trackers.</p><a href="#" class="read-more">Read More <span>&rarr;</span></a></div>
+    <div class="history-item">
+      <span class="h-date">22 Aug 2025</span>
+      <div class="h-text"><span class="quote">"So, the speaker is working, but, the sound is too low."</span></div>
     </div>
+    <div class="history-item">
+      <span class="h-date">26 Aug 2025</span>
+      <div class="h-text"><span class="quote">"This firmware was given to be run on ESP-IDF, and it worked great."</span></div>
+    </div>
+    <div class="history-item">
+      <span class="h-date">17 Sep 2025</span>
+      <div class="h-text"><span class="quote">"The motors and the PCB do not fit in the 3-D printed parts."</span></div>
+    </div>
+    <div class="history-item">
+      <span class="h-date">18 Sep 2025</span>
+      <div class="h-text"><span class="quote">"We received wrong part number DRV8834 instead of DRV8833."</span></div>
+    </div>
+    <div class="history-item">
+      <span class="h-date">14 Oct 2025</span>
+      <div class="h-text"><span class="quote">"We are currently assembling the first unit."</span></div>
+    </div>
+  </div>
+  <div class="history-meta reveal">
+    <p><strong>V1</strong> — Ball prototype &middot; Jul — Sep 2025</p>
+    <p><strong>V2</strong> — Ten rolling units &middot; Sep 2025 — Jan 2026</p>
+    <p><strong>V3</strong> — The companion &middot; 2026 — Current</p>
   </div>
 </section>
 
@@ -450,7 +544,7 @@ footer .footer-links a:hover{color:#fff}
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-links">
-    <a href="#about">About</a><a href="#features">Features</a><a href="#articles">Articles</a><a href="#howitworks">How It Works</a><a href="https://github.com/orbierobot/orbierobot-firmware" target="_blank">GitHub</a>
+    <a href="#about">About</a><a href="#building">Building</a><a href="#features">Specs</a><a href="#history">History</a><a href="https://github.com/orbierobot/orbierobot-firmware" target="_blank">GitHub</a>
   </div>
   <p>OrbieRobot is an open-source project. Built with care for pets and makers everywhere.</p>
   <p style="margin-top:4px;font-size:12px">Not affiliated with PawMe. OrbieRobot is a separate open-source hardware platform.</p>
