@@ -171,15 +171,15 @@ section{padding:100px 60px;position:relative;z-index:1}
 
 
 .history-timeline{max-width:800px;margin:0 auto;position:relative}
-.history-timeline::before{content:'';position:absolute;left:120px;top:0;bottom:0;width:1.5px;background:linear-gradient(180deg,rgba(108,99,255,0.3),transparent)}
+.history-timeline::before{content:'';position:absolute;left:120px;top:0;bottom:0;width:1.5px;background:linear-gradient(180deg,rgba(108,99,255,0.3),rgba(0,212,170,0.2),rgba(255,107,157,0.1))}
 .history-item{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;position:relative}
 .history-item::before{content:'';position:absolute;left:116px;top:28px;width:9px;height:9px;border-radius:50%;background:#6c63ff;border:2px solid #0a0a14;z-index:1}
 .history-item .h-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.35);padding-top:4px;text-align:right}
 .history-item .h-text{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;padding:4px 0 4px 20px;border-left:1px solid rgba(108,99,255,0.08)}
 .history-item .h-text .quote{color:rgba(255,255,255,0.7);font-style:italic}
-.history-item.gen-marker-item::before{background:var(--gen-color)!important;width:11px;height:11px;left:115px}
-.history-item.gen-marker-item .h-text strong{font-size:14px}
-.history-item.gen-marker-item .h-date{font-weight:600;font-size:13px}
+.history-item.gen-marker-item::before{background:var(--gen-color)!important;width:9px;height:9px;left:116px}
+.history-item.gen-marker-item .h-text strong{font-size:inherit}
+.history-item.gen-marker-item .h-date{font-size:12px;font-weight:400}
 .history-meta{text-align:center;margin-top:48px;padding:24px;background:rgba(108,99,255,0.04);border:1px solid rgba(108,99,255,0.08);border-radius:12px}
 .history-meta p{font-size:14px;color:rgba(255,255,255,0.45);font-family:'JetBrains Mono',monospace;letter-spacing:0.5px}
 .history-meta strong{color:#fff}
@@ -532,8 +532,12 @@ footer .footer-links a:hover{color:#fff}
           <div class="h-text"><strong style="color:#ff6b9d;font-family:JetBrains Mono,monospace">V3</strong> <span class="quote">The Companion</span> — A complete rethink. Two wheels, a tilting head, dot-matrix eyes that emote. It stopped being a ball and started being someone.</div>
         </div>
       </div>
+        </section>
   
-        <h2 class="section-title">Ready to Build?</h2>
+            <section class="cta" style="text-align:center">
+              <div class="section-header" style="margin-bottom:20px">
+                <div class="section-label"><span class="line"></span>Get Started</div>
+                <h2 class="section-title">Ready to Build?</h2>
     <p class="section-subtitle" style="margin:0 auto 28px;text-align:center">Join the movement bringing open pet robotics to every home. OrbieRobot is free, open, and built for everyone.</p>
   </div>
   <div class="hero-actions reveal">
