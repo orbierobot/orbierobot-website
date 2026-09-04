@@ -1,0 +1,74 @@
+#
+# Build the site and publish it to GitHub Pages at www.orbierobot.com.
+#
+# Pages rather than Vercel, for two reasons that both matter more than the
+# hosting itself:
+#
+#   * Ownership. The site says Ayva Labs sponsors Orbie and does not own or
+#     direct it. Serving the project's main public asset from an Ayva account
+#     would contradict that in the one place anyone doing diligence would look.
+#     Pages puts it under the project's own organisation, next to the code.
+#   * Vercel's free Hobby tier is non-commercial only, and this project sells
+#     robots. The free tier is not a long-term answer; Pages is.
+#
+# The domain already resolves here — apex A records to GitHub and
+# www CNAME to orbierobot.github.io — so nothing changes at the registrar.
+#
+# When the launch phase needs server-side code, move to a Vercel Pro team owned
+# by the Orbie org and delete this workflow.
+#
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; finish the running one, then take the newest.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Typecheck before publishing: the site makes factual claims and a broken
+      # build is a broken front door.
+      - run: pnpm exec tsc --noEmit
+
+      - run: pnpm build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
