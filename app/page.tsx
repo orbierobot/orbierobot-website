@@ -247,10 +247,10 @@ export default function Page() {
               </h2>
               <p className="mt-6 max-w-[54ch] text-[15px] leading-relaxed text-alu-2">
                 Without a licence file, default copyright applies and nobody may
-                legally use, modify or redistribute anything. Our repositories are
-                in exactly that state right now, which makes the licences below a
-                statement of what is being applied — not a claim that the work is
-                already done.
+                legally use, modify or redistribute anything. Every one of these
+                repositories sat in exactly that state until 5 September 2026,
+                while the README claimed otherwise. The licences below are now
+                committed, and you can check them rather than take our word.
               </p>
               <p className="mt-4 max-w-[54ch] text-[15px] leading-relaxed text-alu-2">
                 Reciprocity on the hardware is the part that matters. Under a
@@ -293,7 +293,7 @@ export default function Page() {
                     </div>
                     <p className="mt-2 text-[13px] leading-relaxed text-alu-3">{l.why}</p>
                     <p className="mt-2.5 text-[10px] tracking-[0.14em] text-alu-3">
-                      {l.status === 'quarantined' ? '◇ QUARANTINED' : '◇ BEING APPLIED — NOT YET IN THE REPOSITORY'}
+                      {l.status === 'quarantined' ? '◇ QUARANTINED — REFERENCE ONLY' : '◆ IN THE REPOSITORY'}
                     </p>
                   </li>
                 ))}

@@ -540,19 +540,19 @@ export const LICENCES = [
     what: 'Firmware, application code, tooling',
     licence: 'Apache-2.0',
     why: 'Carries an explicit patent grant. MIT is silent on patents, and this is robotics.',
-    status: 'pending' as const,
+    status: 'applied' as const,
   },
   {
     what: 'CAD, PCB, mechanical design',
     licence: 'CERN-OHL-S-2.0',
     why: 'Strongly reciprocal — a modified design has to stay open. A permissive hardware licence would let a larger manufacturer close a fork.',
-    status: 'pending' as const,
+    status: 'applied' as const,
   },
   {
     what: 'Documentation, photographs, video',
     licence: 'CC BY-SA 4.0',
     why: 'The build record is part of the project, and it should travel under the same terms.',
-    status: 'pending' as const,
+    status: 'applied' as const,
   },
   {
     what: 'V1 — the ESP-ROLL replication',
@@ -566,7 +566,7 @@ export const LICENCES = [
  * The most persuasive section on the site, and the cheapest to write.
  */
 export const GAPS = [
-  'The repositories carry no licence files yet. Until they do, "open source" is a description of intent, not a legal fact.',
+  'V1 carries no open licence and is not cleared for commercial use. It replicates ESP-ROLL under CC BY-NC-SA, and whether V2 and V3 are legally independent designs is a question for a lawyer, not for us.',
   'Contributor copyright has not been transferred. Ayva Labs paid for the work, so Ayva holds the copyright by default. Moving it takes a legal step, not a decision.',
   'Nobody outside the team has built one from the published files. Until someone has, we do not know whether the repository is genuinely buildable.',
   'The centre of gravity on the current prototype is a known unsolved problem.',
