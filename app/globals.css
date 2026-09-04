@@ -57,7 +57,24 @@ body {
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .ticker-track { animation: ticker 48s linear infinite; }
 
+/*
+ * The mark blinks. Squashing the eye toward its own centre rather than fading
+ * it reads as an eyelid, and the long pause between blinks is what keeps it
+ * from looking like a loading spinner — 7s of stillness, then two fast blinks.
+ */
+@keyframes orbie-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  94%, 98%      { transform: scaleY(0.08); }
+  96%           { transform: scaleY(1); }
+}
+.orbie-blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orbie-blink 7s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
+  .orbie-blink { animation: none; }
   html { scroll-behavior: auto; }
 }

@@ -424,6 +424,7 @@ export default function Page() {
             <a href={LINKS.github} className="text-alu-2 hover:text-volt">GITHUB</a>
             <a href="#log" className="text-alu-2 hover:text-volt">BUILD LOG</a>
             <a href="#gaps" className="text-alu-2 hover:text-volt">WHAT IS NOT TRUE YET</a>
+            <a href="/brand" className="text-alu-2 hover:text-volt">BRAND</a>
           </nav>
         </div>
       </footer>

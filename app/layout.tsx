@@ -13,6 +13,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: ['/media/orbie-poster.jpg'],
   },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/brand/png/apple-touch-icon-180.png',
+  },
   twitter: {
     card: 'summary_large_image',
     site: '@orbie_robot',

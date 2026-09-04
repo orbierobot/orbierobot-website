@@ -8,6 +8,8 @@
  * they grow as the project does.
  */
 
+import { OrbieMark } from '@/components/logo';
+
 const TICKER = [
   'GENERATIONS 3',
   'V1 JUL 2025',
@@ -25,8 +27,8 @@ export function StatusBar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-ground/90 backdrop-blur">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-3">
-        <a href="#top" className="flex items-center gap-2.5">
-          <span className="h-2 w-2 rounded-full bg-volt" aria-hidden />
+        <a href="#top" className="flex items-center gap-2.5 text-volt">
+          <OrbieMark size={20} blink />
           <span className="font-display text-sm font-700 tracking-[0.22em] text-alu">
             ORBIE.SYS
           </span>
