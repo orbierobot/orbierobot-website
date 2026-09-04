@@ -11,16 +11,16 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#07070d;color:#e0e0e0;line-height:1.7;overflow-x:hidden}
-
+14|
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:#07070d}
 ::-webkit-scrollbar-thumb{background:#2a2a3a;border-radius:3px}
 ::-webkit-scrollbar-thumb:hover{background:#3a3a5a}
-
+20|
 /* ===== PARTICLE CANVAS ===== */
 #particleBg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3}
-
+23|
 /* ===== NAV ===== */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(7,7,13,0.8);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.04);transition:transform 0.4s}
 nav.scrolled{transform:translateY(0)}
@@ -34,7 +34,7 @@ nav .nav-links a:hover::after{width:100%}
 nav .github-btn{background:linear-gradient(135deg,#6c63ff,#00d4aa);color:#fff!important;padding:7px 18px;border-radius:6px;font-weight:600!important}
 nav .github-btn::after{display:none!important}
 nav .github-btn:hover{opacity:0.9}
-
+37|
 /* ===== HERO ===== */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 60px 80px;z-index:1}
 .hero-bg{position:absolute;inset:0;z-index:0}
@@ -68,7 +68,7 @@ nav .github-btn:hover{opacity:0.9}
 .hero-scroll .arrow::after{content:'';width:2.5px;height:7px;background:rgba(255,255,255,0.3);border-radius:2px;position:absolute;top:5px;left:50%;transform:translateX(-50%);animation:scrollDot 2s ease-in-out infinite}
 @keyframes scrollBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 @keyframes scrollDot{0%,100%{opacity:1}50%{opacity:0.2}}
-
+71|
 /* ===== SECTION COMMON ===== */
 section{padding:100px 60px;position:relative;z-index:1}
 .section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#6c63ff;margin-bottom:12px}
@@ -78,7 +78,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 .section-header{text-align:center;margin-bottom:56px}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-
+81|
 /* ===== ABOUT ===== */
 .about{background:linear-gradient(180deg,#07070d 0%,#0a0a14 100%)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto}
@@ -87,7 +87,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 .about-text p{font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:18px;line-height:1.8}
 .about-text .highlight-box{background:rgba(108,99,255,0.05);border-left:2.5px solid #6c63ff;padding:18px 22px;border-radius:0 8px 8px 0;margin:22px 0}
 .about-text .highlight-box p{color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:0}
-
+90|
 /* ===== SHOWCASE VIDEO ===== */
 .showcase{background:#07070d;position:relative;overflow:hidden}
 .showcase::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(108,99,255,0.04) 0%,transparent 60%);pointer-events:none}
@@ -100,7 +100,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 .vid-btn{background:rgba(255,255,255,0.08);border:none;color:#fff;width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
 .vid-btn:hover{background:rgba(255,255,255,0.15)}
 .vid-label{font-size:12px;color:rgba(255,255,255,0.4);margin-left:auto;letter-spacing:0.3px}
-
+103|
 /* ===== 360 VIEWER ===== */
 .viewer-section{background:linear-gradient(180deg,#0a0a14 0%,#07070d 100%)}
 .viewer-container{max-width:820px;margin:0 auto;text-align:center}
@@ -119,7 +119,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 .viewer-pill.paused .pill-dot{background:#ff6b9d;animation:none}
 @keyframes dotPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,170,0.4)}50%{opacity:0.5;box-shadow:0 0 0 6px rgba(0,212,170,0)}}
 .viewer-info{margin-top:16px;font-size:13px;color:rgba(255,255,255,0.25);letter-spacing:0.5px}
-
+122|
 /* ===== BUILDING THE ROBOT ===== */
 .building{background:linear-gradient(180deg,#0a0a14 0%,#07070d 100%)}
 .gen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
@@ -142,7 +142,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 .gen-card.v1-card .gen-divider{color:#6c63ff}
 .gen-card.v2-card .gen-divider{color:#00d4aa}
 .gen-card.v3-card .gen-divider{color:#ff6b9d}
-
+145|
 /* ===== FEATURES TABLE ===== */
 .features{background:linear-gradient(180deg,#07070d 0%,#0a0a14 100%)}
 .features-intro{text-align:center;max-width:700px;margin:0 auto 48px;font-size:15px;color:rgba(255,255,255,0.5);line-height:1.8}
@@ -155,10 +155,22 @@ section{padding:100px 60px;position:relative;z-index:1}
 .spec-table .t-row span{padding:14px 20px;font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6}
 .spec-table .t-row span:first-child{font-weight:600;color:#6c63ff;font-size:12px;letter-spacing:1px;text-transform:uppercase}
 .spec-table .t-row span:nth-child(2){font-weight:500;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px}
-
+158|
 /* ===== HISTORY ===== */
 .history{background:linear-gradient(180deg,#0a0a14 0%,#07070d 100%)}
 .history-intro{text-align:center;max-width:600px;margin:0 auto 12px;font-size:14px;color:rgba(255,255,255,0.4);font-style:italic}
+.history-description{max-width:700px;margin:-32px auto 40px;text-align:center}
+.history-description p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;padding:20px;background:rgba(108,99,255,0.03);border-radius:12px;border:1px solid rgba(108,99,255,0.06)}
+.history-gen-markers{max-width:800px;margin:30px auto 0;display:flex;flex-direction:column;gap:12px;position:relative;padding-left:120px}
+.gen-marker{display:flex;align-items:center;gap:16px;padding:14px 20px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:10px;transition:all 0.3s;position:relative}
+.gen-marker:hover{background:rgba(255,255,255,0.04);border-color:var(--gen-color);transform:translateX(4px)}
+.gen-marker-dot{width:10px;height:10px;border-radius:50%;background:var(--gen-color);flex-shrink:0;position:relative}
+.gen-marker-dot::after{content:'';position:absolute;left:-3px;top:-3px;width:16px;height:16px;border-radius:50%;border:2px solid var(--gen-color);opacity:0.3;animation:markerPulse 2s ease-in-out infinite}
+@keyframes markerPulse{0%,100%{transform:scale(1);opacity:0.3}50%{transform:scale(1.3);opacity:0.1}}
+.gen-marker-info{display:flex;flex-direction:column;gap:2px}
+.gen-marker-label{font-size:13px;font-weight:700;color:var(--gen-color);font-family:'JetBrains Mono',monospace}
+.gen-marker-date{font-size:11px;color:rgba(255,255,255,0.3);font-family:'JetBrains Mono',monospace}
+.gen-marker-desc{font-size:13px;color:rgba(255,255,255,0.55)}
 .history-timeline{max-width:800px;margin:0 auto;position:relative}
 .history-timeline::before{content:'';position:absolute;left:120px;top:0;bottom:0;width:1.5px;background:linear-gradient(180deg,rgba(108,99,255,0.3),transparent)}
 .history-item{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;position:relative}
@@ -183,7 +195,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 .feature-card .icon.pink{background:rgba(255,107,157,0.1)}
 .feature-card h3{font-size:17px;font-weight:700;color:#fff;margin-bottom:10px}
 .feature-card p{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.7}
-
+186|
 /* ===== STATS ===== */
 .stats{background:#0a0a14}
 .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;max-width:1000px;margin:0 auto;padding:48px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:16px}
@@ -191,7 +203,7 @@ section{padding:100px 60px;position:relative;z-index:1}
 .stat-num{font-size:34px;font-weight:800;color:#fff;letter-spacing:-1px;font-family:'JetBrains Mono',monospace}
 .stat-num .accent{color:#6c63ff}
 .stat-label{font-size:12px;color:rgba(255,255,255,0.35);margin-top:6px;text-transform:uppercase;letter-spacing:1px}
-
+194|
 /* ===== HOW IT WORKS ===== */
 .howitworks{background:linear-gradient(180deg,#07070d 0%,#0a0a14 100%)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto}
@@ -201,13 +213,13 @@ section{padding:100px 60px;position:relative;z-index:1}
 .step-num{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,rgba(108,99,255,0.15),rgba(0,212,170,0.15));border:1px solid rgba(108,99,255,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:16px;font-weight:700;color:#6c63ff}
 .step h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
 .step p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6}
-
+204|
 /* ===== QUOTE ===== */
 .quote-section{background:#0a0a14;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
 .quote-section::before{content:'"';position:absolute;top:20px;left:50%;transform:translateX(-50%);font-size:120px;color:rgba(108,99,255,0.06);font-family:Georgia,serif;line-height:1}
 .quote-text{max-width:700px;margin:0 auto;font-size:22px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.7;font-style:italic}
 .quote-author{font-size:13px;color:rgba(255,255,255,0.3);margin-top:16px;letter-spacing:1px}
-
+210|
 /* ===== ARTICLES ===== */
 .articles{background:linear-gradient(180deg,#0a0a14 0%,#07070d 100%)}
 .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
@@ -221,17 +233,17 @@ section{padding:100px 60px;position:relative;z-index:1}
 .article-card p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .article-card .read-more{display:inline-block;margin-top:12px;color:#6c63ff;font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap 0.3s}
 .article-card .read-more:hover{gap:8px}
-
+224|
 /* ===== CTA ===== */
 .cta{text-align:center;background:linear-gradient(135deg,rgba(108,99,255,0.04),rgba(0,212,170,0.02));border-top:1px solid rgba(108,99,255,0.08);border-bottom:1px solid rgba(108,99,255,0.08);padding:80px 60px}
-
+227|
 /* ===== FOOTER ===== */
 footer{text-align:center;padding:36px 60px;border-top:1px solid rgba(255,255,255,0.03);z-index:1;position:relative}
 footer p{font-size:13px;color:rgba(255,255,255,0.15)}
 footer .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:14px;flex-wrap:wrap}
 footer .footer-links a{color:rgba(255,255,255,0.25);text-decoration:none;font-size:13px;transition:color 0.3s}
 footer .footer-links a:hover{color:#fff}
-
+234|
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
   .features-grid,.articles-grid{grid-template-columns:repeat(2,1fr)}
@@ -240,23 +252,47 @@ footer .footer-links a:hover{color:#fff}
   .stats-bar{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
-  nav{padding:12px 20px;flex-direction:column;gap:10px}
-  nav .nav-links{gap:14px;flex-wrap:wrap;justify-content:center}
-  section{padding:56px 20px}
-  .hero{padding:120px 20px 60px}
-  .about-grid,.articles-grid{grid-template-columns:1fr}
-  .features-grid,.steps{grid-template-columns:1fr;gap:14px}
-  .stats-bar{grid-template-columns:1fr;gap:20px;padding:28px}
-  .viewer-stage{min-height:320px;height:auto;padding-bottom:75%}
-  .quote-text{font-size:18px}
-  .showcase-video{max-height:320px}
+  nav{padding:12px 20px}
+  nav .nav-links{gap:10px;flex-wrap:wrap;justify-content:center}
+  nav .nav-links a{font-size:11px}
+  section{padding:40px 16px}
+  .hero{padding:100px 16px 50px;min-height:auto}
+  .hero h1{font-size:clamp(32px,10vw,44px);letter-spacing:-1px}
+  .hero p{font-size:14px;max-width:100%}
+  .hero-actions{gap:10px;flex-direction:column;align-items:center}
+  .btn-primary,.btn-secondary{padding:14px 28px;font-size:14px;width:100%;max-width:280px;text-align:center}
+  .hero-scroll{display:none}
+  .section-title{font-size:clamp(24px,7vw,32px)}
+  .section-subtitle{font-size:14px;max-width:100%}
+  .section-header{margin-bottom:32px}
+  .about-grid,.articles-grid{grid-template-columns:1fr;gap:30px}
+  .about-visual svg{max-width:100%}
+  .features-grid,.steps{grid-template-columns:1fr;gap:12px}
+  .stats-bar{grid-template-columns:repeat(2,1fr);gap:16px;padding:20px}
+  .stat-num{font-size:26px}
+  .spec-table .t-head,.spec-table .t-row{grid-template-columns:1fr 2fr 3fr;font-size:12px}
+  .spec-table .t-row span{padding:10px 12px;font-size:12px}
+  .gen-grid{grid-template-columns:1fr;gap:16px}
+  .viewer-stage{min-height:280px;height:50vw;max-height:400px}
+  .showcase-video{max-height:240px}
+  .showcase-controls{opacity:1}
+  .quote-text{font-size:16px}
+  footer{padding:24px 16px}
+  footer .footer-links{gap:12px;font-size:12px}
+  .history-item{grid-template-columns:80px 1fr;gap:10px}
+  .history-item .h-date{font-size:10px}
+  .history-item .h-text{font-size:13px;padding-left:12px}
+  .history-timeline::before{left:80px}
+  .history-item::before{left:76px;width:7px;height:7px}
+  .gen-marker{flex-direction:column;align-items:flex-start;gap:4px;padding:12px 16px}
+  .gen-marker-dot{display:none}
 }
 </style>
 </head>
 <body>
-
+257|
 <canvas id="particleBg"></canvas>
-
+259|
 <!-- ===== NAV ===== -->
 <nav>
   <div class="logo">Orbie<span>Robot</span></div>
@@ -270,7 +306,7 @@ footer .footer-links a:hover{color:#fff}
     <li><a href="https://github.com/orbierobot/orbierobot-firmware" target="_blank" class="github-btn">GitHub</a></li>
   </ul>
 </nav>
-
+273|
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <div class="hero-bg">
@@ -294,7 +330,7 @@ footer .footer-links a:hover{color:#fff}
     <div class="arrow"></div>
   </div>
 </section>
-
+297|
 <!-- ===== ABOUT ===== -->
 <section id="about" class="about">
   <div class="section-header reveal">
@@ -305,37 +341,72 @@ footer .footer-links a:hover{color:#fff}
   <div class="about-grid">
     <div class="about-visual reveal">
       <svg class="robot-scene-svg" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="180" y="180" width="140" height="120" rx="16" fill="url(#rG)" stroke="rgba(108,99,255,0.3)" stroke-width="2"/>
-        <rect x="195" y="195" width="50" height="40" rx="8" fill="rgba(0,0,0,0.3)"/>
-        <rect x="255" y="195" width="50" height="40" rx="8" fill="rgba(0,0,0,0.3)"/>
-        <circle cx="220" cy="215" r="6" fill="#00d4aa" opacity="0.9"><animate attributeName="opacity" values="0.9;0.5;0.9" dur="2s" repeatCount="indefinite"/></circle>
-        <circle cx="280" cy="215" r="6" fill="#00d4aa" opacity="0.9"><animate attributeName="opacity" values="0.9;0.5;0.9" dur="2s" repeatCount="indefinite"/></circle>
-        <rect x="240" y="225" width="20" height="4" rx="2" fill="#6c63ff"/>
-        <rect x="190" y="140" width="120" height="50" rx="20" fill="url(#rG)" stroke="rgba(108,99,255,0.3)" stroke-width="2"/>
-        <circle cx="220" cy="162" r="8" fill="#00d4aa" opacity="0.8"><animate attributeName="r" values="6;8;6" dur="3s" repeatCount="indefinite"/></circle>
-        <circle cx="280" cy="162" r="8" fill="#00d4aa" opacity="0.8"><animate attributeName="r" values="6;8;6" dur="3s" repeatCount="indefinite"/></circle>
-        <line x1="250" y1="120" x2="250" y2="140" stroke="rgba(108,99,255,0.4)" stroke-width="2"/>
-        <circle cx="250" cy="115" r="6" fill="#6c63ff" opacity="0.6"><animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/></circle>
-        <ellipse cx="210" cy="300" rx="25" ry="10" fill="#2a2a3a" stroke="rgba(108,99,255,0.2)" stroke-width="1.5"/>
-        <ellipse cx="290" cy="300" rx="25" ry="10" fill="#2a2a3a" stroke="rgba(108,99,255,0.2)" stroke-width="1.5"/>
-        <ellipse cx="100" cy="310" rx="45" ry="30" fill="#c4956a"/><circle cx="80" cy="285" r="22" fill="#c4956a"/>
-        <ellipse cx="65" cy="270" rx="12" ry="6" fill="#c4956a" transform="rotate(-30,65,270)"/>
-        <ellipse cx="95" cy="270" rx="12" ry="6" fill="#c4956a" transform="rotate(10,95,270)"/>
-        <circle cx="75" cy="280" r="4" fill="#2a1a0a"/><circle cx="72" cy="275" r="2" fill="#2a1a0a" opacity="0.5"/>
-        <path d="M65 295 Q60 308 68 310 Q75 308 75 295" fill="#e8b088"/>
-        <path d="M140 300 Q160 280 155 260" stroke="#c4956a" stroke-width="5" stroke-linecap="round" fill="none"/>
-        <ellipse cx="400" cy="310" rx="30" ry="22" fill="#808080"/><circle cx="385" cy="283" r="18" fill="#808080"/>
-        <path d="M373 268 L368 255 L378 265Z" fill="#808080"/><path d="M397 268 L402 255 L392 265Z" fill="#808080"/>
-        <circle cx="380" cy="280" r="3" fill="#1a1a1a"/><circle cx="378" cy="276" r="1.5" fill="#1a1a1a" opacity="0.5"/>
-        <path d="M373 292 Q370 302 375 304 Q380 302 380 292" fill="#ffb0b0"/>
-        <path d="M430 305 Q445 295 440 275" stroke="#808080" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M180 250 Q140 240 120 280" stroke="rgba(108,99,255,0.15)" stroke-width="1.5" stroke-dasharray="4,4" fill="none"/>
-        <path d="M320 250 Q360 240 380 280" stroke="rgba(108,99,255,0.15)" stroke-width="1.5" stroke-dasharray="4,4" fill="none"/>
-        <line x1="30" y1="325" x2="470" y2="325" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-        <path d="M230 90 Q240 75 260 75 Q280 75 290 90" stroke="rgba(0,212,170,0.3)" stroke-width="1.5" fill="none"/>
-        <path d="M235 98 Q245 85 260 85 Q275 85 285 98" stroke="rgba(0,212,170,0.2)" stroke-width="1.5" fill="none"/>
-        <defs><linearGradient id="rG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/></linearGradient></defs>
-      </svg>
+  <!-- Shadow under robot -->
+  <ellipse cx="250" cy="348" rx="100" ry="12" fill="rgba(0,0,0,0.2)"/>
+  <!-- Robot body (single rounded rectangle, dark gray) -->
+  <rect x="185" y="185" width="130" height="115" rx="20" fill="#2e2e2e" stroke="rgba(108,99,255,0.2)" stroke-width="1.5"/>
+  <!-- Top accent -->
+  <rect x="195" y="187" width="110" height="10" rx="4" fill="#3a3a3a"/>
+  <!-- Face plate (dark translucent on upper half) -->
+  <rect x="198" y="202" width="104" height="55" rx="5" fill="#1a1a1a" opacity="0.85"/>
+  <!-- LED Dot-Matrix Eyes (two pixel clusters) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-1;0,0;0,0;0,0;0,0;0,1;0,0" dur="6s" repeatCount="indefinite"/>
+    <circle cx="224" cy="225" r="5" fill="#00d4aa" opacity="0.9"><animate attributeName="r" values="5;5.5;5" dur="0.6s" repeatCount="indefinite"/></circle>
+    <circle cx="213" cy="225" r="5" fill="#00d4aa" opacity="0.9"><animate attributeName="r" values="5;5.5;5" dur="0.6s" repeatCount="indefinite"/></circle>
+    <circle cx="218" cy="218" r="3.5" fill="#00d4aa" opacity="0.6"/>
+    <circle cx="218" cy="230" r="3.5" fill="#00d4aa" opacity="0.6"/>
+    <circle cx="276" cy="225" r="5" fill="#00d4aa" opacity="0.9"><animate attributeName="r" values="5;5.5;5" dur="0.6s" repeatCount="indefinite"/></circle>
+    <circle cx="265" cy="225" r="5" fill="#00d4aa" opacity="0.9"><animate attributeName="r" values="5;5.5;5" dur="0.6s" repeatCount="indefinite"/></circle>
+    <circle cx="270" cy="218" r="3.5" fill="#00d4aa" opacity="0.6"/>
+    <circle cx="270" cy="230" r="3.5" fill="#00d4aa" opacity="0.6"/>
+  </g>
+  <!-- Speaker grille -->
+  <rect x="215" y="262" width="70" height="14" rx="3" fill="#1a1a1a" opacity="0.5"/>
+  <circle cx="223" cy="269" r="2.5" fill="#2e2e2e"/><circle cx="233" cy="269" r="2.5" fill="#2e2e2e"/>
+  <circle cx="243" cy="269" r="2.5" fill="#2e2e2e"/><circle cx="253" cy="269" r="2.5" fill="#2e2e2e"/>
+  <circle cx="263" cy="269" r="2.5" fill="#2e2e2e"/><circle cx="273" cy="269" r="2.5" fill="#2e2e2e"/>
+  <!-- Camera (top center) -->
+  <circle cx="250" cy="199" r="7" fill="#111"/>
+  <circle cx="250" cy="199" r="4" fill="#000" stroke="rgba(0,212,170,0.15)" stroke-width="1"/>
+  <circle cx="251" cy="198" r="1.5" fill="#fff" opacity="0.3"/>
+  <!-- Antenna -->
+  <line x1="250" y1="185" x2="250" y2="167" stroke="rgba(108,99,255,0.4)" stroke-width="1.5"/>
+  <circle cx="250" cy="164" r="4" fill="#6c63ff" opacity="0.6"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/></circle>
+  <!-- Wheels -->
+  <ellipse cx="198" cy="300" rx="24" ry="28" fill="#111"/>
+  <ellipse cx="198" cy="295" rx="5" ry="5" fill="#444"/>
+  <ellipse cx="302" cy="300" rx="24" ry="28" fill="#111"/>
+  <ellipse cx="302" cy="295" rx="5" ry="5" fill="#444"/>
+  <!-- Caster -->
+  <circle cx="250" cy="312" r="5" fill="#222"/>
+  <!-- DOG -->
+  <ellipse cx="80" cy="322" rx="50" ry="32" fill="#c4956a"/>
+  <circle cx="60" cy="292" r="24" fill="#c4956a"/>
+  <ellipse cx="46" cy="274" rx="14" ry="7" fill="#c4956a" transform="rotate(-30,46,274)"/>
+  <ellipse cx="76" cy="274" rx="14" ry="7" fill="#c4956a" transform="rotate(10,76,274)"/>
+  <circle cx="56" cy="286" r="4" fill="#2a1a0a"/>
+  <circle cx="50" cy="282" r="2.5" fill="#2a1a0a" opacity="0.5"/>
+  <path d="M46 306 Q40 320 50 322 Q56 320 56 306" fill="#e8b088"/>
+  <path d="M125 310 Q145 285 138 265" stroke="#c4956a" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- CAT -->
+  <ellipse cx="432" cy="322" rx="35" ry="24" fill="#808080"/>
+  <circle cx="416" cy="292" r="20" fill="#808080"/>
+  <path d="M401 274 L395 259 L407 270Z" fill="#808080"/>
+  <path d="M429 274 L435 259 L423 270Z" fill="#808080"/>
+  <circle cx="411" cy="288" r="3.5" fill="#1a1a1a"/>
+  <circle cx="407" cy="283" r="2" fill="#1a1a1a" opacity="0.5"/>
+  <path d="M401 302 Q397 314 404 316 Q409 314 409 302" fill="#ffb0b0"/>
+  <path d="M462 314 Q480 302 474 282" stroke="#808080" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <!-- Connection lines -->
+  <path d="M185 270 Q140 255 115 290" stroke="rgba(108,99,255,0.12)" stroke-width="1.5" stroke-dasharray="4,4" fill="none"/>
+  <path d="M315 270 Q360 255 385 290" stroke="rgba(108,99,255,0.12)" stroke-width="1.5" stroke-dasharray="4,4" fill="none"/>
+  <line x1="20" y1="340" x2="480" y2="340" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <!-- WiFi -->
+  <path d="M233 153 Q242 143 258 143 Q274 143 283 153" stroke="rgba(0,212,170,0.25)" stroke-width="1.5" fill="none"/>
+  <path d="M238 160 Q247 150 258 150 Q269 150 278 160" stroke="rgba(0,212,170,0.15)" stroke-width="1.5" fill="none"/>
+  <defs><linearGradient id="rG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2e2e2e"/><stop offset="100%" stop-color="#1a1a1a"/></linearGradient></defs>
+</svg>
     </div>
     <div class="about-text reveal">
       <h3>Where Open Source Meets Pet Care</h3>
@@ -347,7 +418,7 @@ footer .footer-links a:hover{color:#fff}
     </div>
   </div>
 </section>
-
+350|
 <!-- ===== SHOWCASE VIDEO ===== -->
 <section id="showcase" class="showcase">
   <div class="section-header reveal">
@@ -368,7 +439,7 @@ footer .footer-links a:hover{color:#fff}
     </div>
   </div>
 </section>
-
+371|
 <!-- ===== 360 VIEWER ===== -->
 <section id="viewer" class="viewer-section">
   <div class="section-header reveal">
@@ -386,7 +457,7 @@ footer .footer-links a:hover{color:#fff}
     <div class="viewer-info">Drag with mouse or finger to rotate. Scroll to zoom. Release and it keeps turning.</div>
   </div>
 </section>
-
+389|
 <!-- ===== BUILDING THE ROBOT ===== -->
 <section id="building" class="building">
   <div class="section-header reveal">
@@ -439,7 +510,7 @@ footer .footer-links a:hover{color:#fff}
     </div>
   </div>
 </section>
-
+442|
 <!-- ===== FEATURES SPECS ===== -->
 <section id="features" class="features">
   <div class="section-header reveal">
@@ -458,7 +529,7 @@ footer .footer-links a:hover{color:#fff}
     <div class="t-row"><span>POWER</span><span>1 × 18650 cell</span><span>In V1 it doubled as the ballast that made the ball roll.</span></div>
   </div>
 </section>
-
+461|
 <!-- ===== STATS ===== -->
 <section class="stats">
   <div class="stats-bar reveal">
@@ -468,7 +539,7 @@ footer .footer-links a:hover{color:#fff}
     <div class="stat-item"><div class="stat-num"><span class="accent">DIY</span> Ready</div><div class="stat-label">Build It Yourself</div></div>
   </div>
 </section>
-
+471|
 <!-- ===== HOW IT WORKS ===== -->
 <section id="howitworks" class="howitworks">
   <div class="section-header reveal">
@@ -483,13 +554,16 @@ footer .footer-links a:hover{color:#fff}
     <div class="step reveal"><div class="step-num">4</div><h3>Connect &amp; Customize</h3><p>Connect to the OrbieRobot WiFi access point, open the web interface, and start interacting with your pet.</p></div>
   </div>
 </section>
-
+486|
 <!-- ===== HISTORY ===== -->
 <section id="history" class="history">
   <div class="section-header reveal">
     <div class="section-label"><span class="line"></span>03 — History</div>
     <h2 class="section-title">Including the Parts That Went Wrong</h2>
     <p class="section-subtitle">1,299 messages between July 2025 and March 2026. These are verbatim.</p>
+  </div>
+  <div class="history-description reveal">
+    <p>Below is the complete development log of OrbieRobot — every build, every wrong part, every breakthrough. From the first ESP-ROLL replication in July 2025 through V2's ten-unit production run to the V3 companion design, these messages capture the real story of how this robot went from a transparent ball to a tilting-head companion with dot-matrix eyes. No edits, no polish — just the raw build thread.</p>
   </div>
   <div class="history-timeline reveal">
     <div class="history-item">
@@ -521,13 +595,41 @@ footer .footer-links a:hover{color:#fff}
       <div class="h-text"><span class="quote">"We are currently assembling the first unit."</span></div>
     </div>
   </div>
+  </div>
+  <!-- Generation markers on the same timeline -->
+  <div class="history-gen-markers reveal">
+    <div class="gen-marker" style="--gen-color:#6c63ff">
+      <div class="gen-marker-dot"></div>
+      <div class="gen-marker-info">
+        <span class="gen-marker-label">V1</span>
+        <span class="gen-marker-date">Jul — Sep 2025</span>
+        <span class="gen-marker-desc">The Ball — ESP-ROLL replication</span>
+      </div>
+    </div>
+    <div class="gen-marker" style="--gen-color:#00d4aa">
+      <div class="gen-marker-dot"></div>
+      <div class="gen-marker-info">
+        <span class="gen-marker-label">V2</span>
+        <span class="gen-marker-date">Sep 2025 — Jan 2026</span>
+        <span class="gen-marker-desc">Ten Units — Our own rolling design</span>
+      </div>
+    </div>
+    <div class="gen-marker" style="--gen-color:#ff6b9d">
+      <div class="gen-marker-dot"></div>
+      <div class="gen-marker-info">
+        <span class="gen-marker-label">V3</span>
+        <span class="gen-marker-date">2026 — Current</span>
+        <span class="gen-marker-desc">The Companion — Two wheels, tilting head, LED eyes</span>
+      </div>
+    </div>
+  </div>
   <div class="history-meta reveal">
     <p><strong>V1</strong> — Ball prototype &middot; Jul — Sep 2025</p>
     <p><strong>V2</strong> — Ten rolling units &middot; Sep 2025 — Jan 2026</p>
     <p><strong>V3</strong> — The companion &middot; 2026 — Current</p>
   </div>
 </section>
-
+530|
 <!-- ===== CTA ===== -->
 <section class="cta">
   <div class="section-header reveal" style="margin-bottom:20px">
@@ -540,7 +642,7 @@ footer .footer-links a:hover{color:#fff}
     <a href="https://github.com/orbierobot/orbierobot-firmware" target="_blank" class="btn-secondary">View on GitHub</a>
   </div>
 </section>
-
+543|
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-links">
@@ -549,7 +651,7 @@ footer .footer-links a:hover{color:#fff}
   <p>OrbieRobot is an open-source project. Built with care for pets and makers everywhere.</p>
   <p style="margin-top:4px;font-size:12px">Not affiliated with PawMe. OrbieRobot is a separate open-source hardware platform.</p>
 </footer>
-
+552|
 <!-- ===== JAVASCRIPT ===== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
@@ -563,7 +665,7 @@ footer .footer-links a:hover{color:#fff}
   function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
   resize();
   window.addEventListener('resize', resize);
-
+566|
   const particles = [];
   const PCOUNT = 80;
   for (let i = 0; i < PCOUNT; i++) {
@@ -573,7 +675,7 @@ footer .footer-links a:hover{color:#fff}
       r: Math.random() * 1.5 + 0.5, a: Math.random() * 0.5 + 0.1
     });
   }
-
+576|
   function drawParticles() {
     ctx.clearRect(0, 0, W, H);
     for (const p of particles) {
@@ -600,7 +702,7 @@ footer .footer-links a:hover{color:#fff}
     requestAnimationFrame(drawParticles);
   }
   drawParticles();
-
+603|
   // ----- Smooth scroll for nav -----
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
@@ -613,7 +715,7 @@ footer .footer-links a:hover{color:#fff}
       }
     });
   });
-
+616|
   // ----- Reveal on scroll -----
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -622,9 +724,9 @@ footer .footer-links a:hover{color:#fff}
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
+625|
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
+627|
   // ----- 3D Robot Model Viewer -----
   const stage = document.getElementById('viewerStage');
   const canvas = document.getElementById('robotCanvas');
@@ -632,7 +734,7 @@ footer .footer-links a:hover{color:#fff}
   const pill = document.getElementById('viewerPill');
   const statusEl = document.getElementById('viewerStatus');
   const loadingEl = document.getElementById('viewerLoading');
-
+635|
   if (typeof THREE !== 'undefined') {
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -641,11 +743,11 @@ footer .footer-links a:hover{color:#fff}
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
     renderer.outputEncoding = THREE.sRGBEncoding;
-
+644|
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
     camera.position.set(3.5, 2.2, 4.5);
-
+648|
     const controls = new THREE.OrbitControls(camera, canvas);
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
@@ -655,7 +757,7 @@ footer .footer-links a:hover{color:#fff}
     controls.maxDistance = 12;
     controls.target.set(0, 0.8, 0);
     controls.update();
-
+658|
     const hemi = new THREE.HemisphereLight(0x8a9aff, 0x0a0a12, 0.7);
     scene.add(hemi);
     const key = new THREE.DirectionalLight(0xffffff, 1.3);
@@ -669,7 +771,7 @@ footer .footer-links a:hover{color:#fff}
     const rim = new THREE.DirectionalLight(0xff8844, 0.25);
     rim.position.set(0, -1, -5);
     scene.add(rim);
-
+672|
     const shadow = new THREE.Mesh(
       new THREE.CircleGeometry(2.5, 48),
       new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.25, depthWrite: false })
@@ -677,7 +779,7 @@ footer .footer-links a:hover{color:#fff}
     shadow.rotation.x = -Math.PI / 2;
     shadow.position.y = 0.01;
     scene.add(shadow);
-
+680|
     const loader = new THREE.GLTFLoader();
     fetch('images/robot-model.glb')
       .then(res => res.arrayBuffer())
@@ -695,16 +797,185 @@ footer .footer-links a:hover{color:#fff}
           if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; child.frustumCulled = false; }
         });
         scene.add(model);
-        controls.target.set(0, 1.0, 0);
-        loadingEl.style.display = 'none';
-        hint.style.opacity = '1';
+                controls.target.set(0, 1.0, 0);
+                loadingEl.style.display = 'none';
+                hint.style.opacity = '1';
+
+                // --- LED Face Expression Overlay ---
+                // Create a canvas-based face with animated dot-matrix eyes
+                const faceCanvas = document.createElement('canvas');
+                faceCanvas.width = 64;
+                faceCanvas.height = 40;
+                const fctx = faceCanvas.getContext('2d');
+
+                // Create Three.js sprite from canvas
+                const faceTexture = new THREE.CanvasTexture(faceCanvas);
+                const faceMaterial = new THREE.SpriteMaterial({ map: faceTexture, transparent: true, depthTest: true, depthWrite: false, opacity: 1 });
+                const faceSprite = new THREE.Sprite(faceMaterial);
+                faceSprite.position.set(0, 1.0, 0.3); // Position in front of robot face
+                faceSprite.scale.set(0.7, 0.44, 1);
+                scene.add(faceSprite);
+
+                // Expression states: 0=happy, 1=blink, 2=look_left, 3=look_right, 4=surprised, 5=love, 6=wink
+                let expressionIdx = 0;
+                const expressions = [
+                  // Happy (default smile + round eyes)
+                  function(ctx) {
+                    ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, 64, 40);
+                    // Eyes - big round
+                    ctx.fillStyle = '#00d4aa';
+                    ctx.beginPath(); ctx.arc(18, 16, 7, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(46, 16, 7, 0, Math.PI*2); ctx.fill();
+                    // Pupils
+                    ctx.fillStyle = '#1a1a1a';
+                    ctx.beginPath(); ctx.arc(18, 16, 3, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(46, 16, 3, 0, Math.PI*2); ctx.fill();
+                    // Smile
+                    ctx.strokeStyle = '#00d4aa'; ctx.lineWidth = 2;
+                    ctx.beginPath(); ctx.arc(32, 26, 10, 0.1, Math.PI - 0.1); ctx.stroke();
+                  },
+                  // Blink
+                  function(ctx) {
+                    ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, 64, 40);
+                    ctx.strokeStyle = '#00d4aa'; ctx.lineWidth = 2;
+                    ctx.beginPath(); ctx.moveTo(11, 16); ctx.lineTo(25, 16); ctx.stroke();
+                    ctx.beginPath(); ctx.moveTo(39, 16); ctx.lineTo(53, 16); ctx.stroke();
+                    ctx.strokeStyle = '#00d4aa'; ctx.lineWidth = 1.5;
+                    ctx.beginPath(); ctx.arc(32, 26, 8, 0.2, Math.PI - 0.2); ctx.stroke();
+                  },
+                  // Look left
+                  function(ctx) {
+                    ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, 64, 40);
+                    ctx.fillStyle = '#00d4aa';
+                    ctx.beginPath(); ctx.arc(14, 16, 7, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(42, 16, 7, 0, Math.PI*2); ctx.fill();
+                    ctx.fillStyle = '#1a1a1a';
+                    ctx.beginPath(); ctx.arc(12, 16, 3, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(40, 16, 3, 0, Math.PI*2); ctx.fill();
+                  },
+                  // Look right
+                  function(ctx) {
+                    ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, 64, 40);
+                    ctx.fillStyle = '#00d4aa';
+                    ctx.beginPath(); ctx.arc(22, 16, 7, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(50, 16, 7, 0, Math.PI*2); ctx.fill();
+                    ctx.fillStyle = '#1a1a1a';
+                    ctx.beginPath(); ctx.arc(24, 16, 3, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(52, 16, 3, 0, Math.PI*2); ctx.fill();
+                  },
+                  // Surprised (big eyes + open mouth)
+                  function(ctx) {
+                    ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, 64, 40);
+                    ctx.fillStyle = '#00d4aa';
+                    ctx.beginPath(); ctx.arc(18, 14, 9, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(46, 14, 9, 0, Math.PI*2); ctx.fill();
+                    ctx.fillStyle = '#1a1a1a';
+                    ctx.beginPath(); ctx.arc(18, 14, 3, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(46, 14, 3, 0, Math.PI*2); ctx.fill();
+                    // Mouth O
+                    ctx.fillStyle = '#00d4aa';
+                    ctx.beginPath(); ctx.arc(32, 28, 5, 0, Math.PI*2); ctx.fill();
+                  },
+                  // Love (heart eyes)
+                  function(ctx) {
+                    ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, 64, 40);
+                    ctx.fillStyle = '#ff6b9d';
+                    // Left heart
+                    ctx.beginPath();
+                    ctx.moveTo(18, 11); ctx.bezierCurveTo(18, 6, 11, 6, 11, 11);
+                    ctx.bezierCurveTo(11, 16, 18, 20, 18, 20);
+                    ctx.closePath(); ctx.fill();
+                    // Right heart
+                    ctx.beginPath();
+                    ctx.moveTo(46, 11); ctx.bezierCurveTo(46, 6, 53, 6, 53, 11);
+                    ctx.bezierCurveTo(53, 16, 46, 20, 46, 20);
+                    ctx.closePath(); ctx.fill();
+                    // Smile
+                    ctx.strokeStyle = '#ff6b9d'; ctx.lineWidth = 2;
+                    ctx.beginPath(); ctx.arc(32, 28, 8, 0.2, Math.PI - 0.2); ctx.stroke();
+                  },
+                  // Wink
+                  function(ctx) {
+                    ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, 64, 40);
+                    // Left eye - open
+                    ctx.fillStyle = '#00d4aa';
+                    ctx.beginPath(); ctx.arc(18, 16, 7, 0, Math.PI*2); ctx.fill();
+                    ctx.fillStyle = '#1a1a1a';
+                    ctx.beginPath(); ctx.arc(18, 16, 3, 0, Math.PI*2); ctx.fill();
+                    // Right eye - wink (line)
+                    ctx.strokeStyle = '#00d4aa'; ctx.lineWidth = 2.5;
+                    ctx.beginPath(); ctx.moveTo(39, 16); ctx.lineTo(53, 16); ctx.stroke();
+                    // Smile
+                    ctx.strokeStyle = '#00d4aa'; ctx.lineWidth = 2;
+                    ctx.beginPath(); ctx.arc(32, 26, 10, 0.1, Math.PI - 0.1); ctx.stroke();
+                  }
+                ];
+
+                // Glow effect behind eyes
+                const glowCanvas = document.createElement('canvas');
+                glowCanvas.width = 64;
+                glowCanvas.height = 40;
+                const gctx = glowCanvas.getContext('2d');
+                const glowTexture = new THREE.CanvasTexture(glowCanvas);
+                const glowMaterial = new THREE.SpriteMaterial({ map: glowTexture, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.3 });
+                const glowSprite = new THREE.Sprite(glowMaterial);
+                glowSprite.position.set(0, 1.0, 0.28);
+                glowSprite.scale.set(0.9, 0.6, 1);
+                scene.add(glowSprite);
+
+                function drawGlow() {
+                  gctx.clearRect(0, 0, 64, 40);
+                  const grad = gctx.createRadialGradient(32, 18, 2, 32, 18, 20);
+                  grad.addColorStop(0, 'rgba(0,212,170,0.4)');
+                  grad.addColorStop(1, 'rgba(0,212,170,0)');
+                  gctx.fillStyle = grad;
+                  gctx.fillRect(0, 0, 64, 40);
+                  glowTexture.needsUpdate = true;
+                }
+                drawGlow();
+
+                let expressionTimer = 0;
+                let expressionDuration = 3.0 + Math.random() * 2;
+                let isBlinking = false;
+                let blinkTimer = 1.5 + Math.random() * 2;
+                const normalExpr = 0; // Always return to happy
+
+                function drawFace() {
+                  const expr = expressions[expressionIdx];
+                  if (expr) expr(fctx);
+                  faceTexture.needsUpdate = true;
+                }
+                drawFace();
+
+                // Override the animate function to update face expressions
+                const origRenderLoop = animate;
+                // We'll add face update in the existing loop by patching the controls event
+                const faceUpdateInterval = setInterval(() => {
+                  if (!controls || !controls.enabled) { clearInterval(faceUpdateInterval); return; }
+          
+                  // Blink check
+                  blinkTimer -= 1/60;
+                  if (blinkTimer <= 0) {
+                    if (!isBlinking) {
+                      isBlinking = true;
+                      expressionIdx = 1; // blink
+                      drawFace();
+                      blinkTimer = 0.12;
+                    } else {
+                      isBlinking = false;
+                      expressionIdx = normalExpr;
+                      drawFace();
+                      blinkTimer = 1.5 + Math.random() * 3;
+                    }
+                  }
+                }, 16);
         controls.addEventListener('start', () => { pill.classList.add('paused'); statusEl.textContent = 'You control the angle'; hint.style.opacity = '0'; });
         controls.addEventListener('end', () => { pill.classList.remove('paused'); statusEl.textContent = 'Auto-spinning'; setTimeout(() => { hint.style.opacity = '1'; }, 1200); });
       })
       .catch(err => {
         loadingEl.innerHTML = '<div class="viewer-fallback">Failed to load 3D model.</div>';
       });
-
+707|
     function resize() {
       const w = stage.clientWidth, h = stage.clientHeight;
       renderer.setSize(w, h, false);
@@ -713,7 +984,7 @@ footer .footer-links a:hover{color:#fff}
     }
     resize();
     window.addEventListener('resize', resize);
-
+716|
     function animate() {
       requestAnimationFrame(animate);
       controls.update();
@@ -721,7 +992,7 @@ footer .footer-links a:hover{color:#fff}
     }
     animate();
   }
-
+724|
   // ----- Video Player Controls -----
   const video = document.getElementById('demoVideo');
   if (video) {
