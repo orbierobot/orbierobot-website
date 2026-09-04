@@ -44,8 +44,8 @@ export function BodyMap() {
                     className={[
                       'block h-2.5 w-2.5 rounded-full border transition',
                       on
-                        ? 'scale-125 border-volt bg-volt shadow-[0_0_0_5px_rgba(204,255,0,0.16)]'
-                        : 'border-line-lit bg-ground hover:border-volt',
+                        ? 'scale-125 border-ember bg-ember shadow-[0_0_0_5px_rgba(204,255,0,0.16)]'
+                        : 'border-line-lit bg-ground hover:border-ember',
                     ].join(' ')}
                   />
                 </button>
@@ -68,7 +68,7 @@ export function BodyMap() {
               className={[
                 'border px-2.5 py-1.5 text-[11px] tracking-[0.1em] transition',
                 s.id === activeId
-                  ? 'border-volt bg-volt/10 text-volt'
+                  ? 'border-ember bg-ember/10 text-ember'
                   : 'border-line text-alu-3 hover:border-line-lit hover:text-alu-2',
               ].join(' ')}
             >
@@ -82,7 +82,7 @@ export function BodyMap() {
       <div className="lg:pt-2">
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
           <h3 className="font-display text-3xl font-700 text-alu md:text-4xl">{active.name}</h3>
-          <span className="text-[13px] text-volt">{active.part}</span>
+          <span className="text-[13px] text-ember">{active.part}</span>
         </div>
 
         {active.bus && (
@@ -91,8 +91,8 @@ export function BodyMap() {
 
         <p className="mt-6 max-w-[56ch] text-[15px] leading-relaxed text-alu-2">{active.what}</p>
 
-        <div className="mt-7 border-l-2 border-volt/40 pl-5">
-          <p className="text-[11px] tracking-[0.18em] text-volt">WHAT IT OPENS UP</p>
+        <div className="mt-7 border-l-2 border-ember/40 pl-5">
+          <p className="text-[11px] tracking-[0.18em] text-ember">WHAT IT OPENS UP</p>
           <p className="mt-2.5 max-w-[54ch] text-[15px] leading-relaxed text-alu">{active.opens}</p>
         </div>
 
@@ -149,8 +149,8 @@ function RobotOutline() {
       {/* lens */}
       <rect x="32.5" y="14" width="35" height="21" rx="8" fill="#060A0E" stroke="#1E2831" />
       {/* the eyes themselves, the one lit thing on the drawing */}
-      <rect x="40" y="20" width="6.5" height="9" rx="2" fill="#CCFF00" opacity="0.85" />
-      <rect x="53.5" y="20" width="6.5" height="9" rx="2" fill="#CCFF00" opacity="0.85" />
+      <rect x="40" y="20" width="6.5" height="9" rx="2" fill="#FF6B2C" opacity="0.85" />
+      <rect x="53.5" y="20" width="6.5" height="9" rx="2" fill="#FF6B2C" opacity="0.85" />
 
       {/* centre line + measure ticks, the drafting register */}
       <line x1="50" y1="3" x2="50" y2="109" stroke="#1E2831" strokeDasharray="2 4" />

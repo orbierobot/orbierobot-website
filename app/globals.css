@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
 /*
- * Palette carried over from the base44 design so the site keeps that
- * terminal/blueprint register — near-black ground, a single acid-volt
- * accent, and Solana green reserved for on-chain things only.
+ * Near-black ground, one warm accent, and Solana green reserved for on-chain
+ * things only.
+ *
+ * The accent was an acid yellow-green (#CCFF00) carried over from the base44
+ * draft. It is now ember. The launch film is graded teal, and orange is teal's
+ * complement — the yellow-green sat next to teal on the wheel and muddied
+ * against it. Ember also suits a thing that keeps the dog company better than
+ * an instrument colour does.
  */
 @theme {
   --color-ground:   #0A0D12;
@@ -11,7 +16,7 @@
   --color-panel-2:  #131A22;
   --color-line:     #1E2831;
   --color-line-lit: #2C3946;
-  --color-volt:     #CCFF00;
+  --color-ember:    #FF6B2C;
   --color-solana:   #00FF9D;
   --color-alu:      #F2F3F2;
   --color-alu-2:    #98A3AC;
@@ -30,9 +35,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: var(--color-volt); color: var(--color-ground); }
+::selection { background: var(--color-ember); color: var(--color-ground); }
 
-:focus-visible { outline: 2px solid var(--color-volt); outline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--color-ember); outline-offset: 3px; }
 
 /* The blueprint field the whole page sits on. */
 .blueprint {

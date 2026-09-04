@@ -80,7 +80,7 @@ files = {}
 # ── Primary: rectangular eyes, kept wide enough and far enough apart that the
 #    mark reads as a face rather than a pause button. Tested at 16px and on
 #    light; the narrower earlier cut failed both.
-EYE_W, EYE_H, EYE_R, GAP = 18, 26, 8, 20
+EYE_W, EYE_H, EYE_R, GAP = 22, 32, 10, 22
 
 files["mark.svg"] = svg(
     100, 100,
@@ -93,21 +93,21 @@ files["mark.svg"] = svg(
 #    shape rendered coarse and fine, not two different logos.
 files["mark-matrix.svg"] = svg(
     100, 100,
-    matrix_eyes(100, 100, lens_r=29, cols=3, rows=4, dot=5.4, gapd=1.8, gap=19),
+    matrix_eyes(100, 100, lens_r=29, cols=3, rows=4, dot=6.2, gapd=2.0, gap=22),
     "Orbie", "Orbie",
 )
 
 # ── The hardware proportion: the lens on the head is about 1.6:1 ────────
 files["face.svg"] = svg(
     160, 100,
-    lens_with_eyes(160, 100, lens_r=34, eye_w=19, eye_h=28, eye_r=9, gap=30),
+    lens_with_eyes(160, 100, lens_r=34, eye_w=23, eye_h=34, eye_r=11, gap=32),
     "Orbie", "Orbie",
 )
 
 # ── Favicon cut: fatter eyes, tighter radius, so it survives 16px ───────
 files["favicon.svg"] = svg(
     100, 100,
-    lens_with_eyes(100, 100, lens_r=25, eye_w=19, eye_h=25, eye_r=8.5, gap=21),
+    lens_with_eyes(100, 100, lens_r=25, eye_w=23, eye_h=31, eye_r=10, gap=23),
     "Orbie", "Orbie",
 )
 

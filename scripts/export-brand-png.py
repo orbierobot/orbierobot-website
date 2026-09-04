@@ -23,15 +23,15 @@ from PIL import Image, ImageDraw
 OUT = pathlib.Path(__file__).resolve().parent.parent / "public" / "brand" / "png"
 SS = 4  # supersample factor
 
-VOLT = (204, 255, 0, 255)
+EMBER = (255, 107, 44, 255)
 GROUND = (10, 13, 18, 255)
 ALU = (242, 243, 242, 255)
 CLEAR = (0, 0, 0, 0)
 
 # Matches LENS_R / EYE in components/logo.tsx.
-GEOM = dict(lens_r=29, eye_w=18, eye_h=26, eye_r=8, gap=20)
-FAVICON = dict(lens_r=25, eye_w=19, eye_h=25, eye_r=8.5, gap=21)
-DOT = dict(cols=3, rows=4, size=5.4, gap=1.8, eye_gap=19, lens_r=29)
+GEOM = dict(lens_r=29, eye_w=22, eye_h=32, eye_r=10, gap=22)
+FAVICON = dict(lens_r=25, eye_w=23, eye_h=31, eye_r=10, gap=23)
+DOT = dict(cols=3, rows=4, size=6.2, gap=2.0, eye_gap=22, lens_r=29)
 
 
 def draw_mark(size, fg, bg=CLEAR, geom=GEOM, matrix=False):
@@ -74,17 +74,17 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     jobs = [
         # Transparent cut-outs — the mark alone, for placing on anything.
-        ("mark-volt-1024.png", draw_mark(1024, VOLT)),
+        ("mark-ember-1024.png", draw_mark(1024, EMBER)),
         ("mark-dark-1024.png", draw_mark(1024, GROUND)),
         ("mark-light-1024.png", draw_mark(1024, ALU)),
-        ("mark-matrix-volt-1024.png", draw_mark(1024, VOLT, matrix=True)),
+        ("mark-matrix-ember-1024.png", draw_mark(1024, EMBER, matrix=True)),
         # Avatar tiles — square, opaque, which is what X and Discord want.
-        ("avatar-volt-on-dark-1024.png", draw_mark(1024, VOLT, bg=GROUND)),
-        ("avatar-dark-on-volt-1024.png", draw_mark(1024, GROUND, bg=VOLT)),
+        ("avatar-ember-on-dark-1024.png", draw_mark(1024, EMBER, bg=GROUND)),
+        ("avatar-dark-on-ember-1024.png", draw_mark(1024, GROUND, bg=EMBER)),
         # Small sizes use the favicon cut.
-        ("apple-touch-icon-180.png", draw_mark(180, VOLT, bg=GROUND, geom=FAVICON)),
-        ("favicon-32.png", draw_mark(32, VOLT, geom=FAVICON)),
-        ("favicon-16.png", draw_mark(16, VOLT, geom=FAVICON)),
+        ("apple-touch-icon-180.png", draw_mark(180, EMBER, bg=GROUND, geom=FAVICON)),
+        ("favicon-32.png", draw_mark(32, EMBER, geom=FAVICON)),
+        ("favicon-16.png", draw_mark(16, EMBER, geom=FAVICON)),
     ]
     for name, img in jobs:
         img.save(OUT / name)

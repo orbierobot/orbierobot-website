@@ -27,13 +27,13 @@ export default function Page() {
         {/* ── Hero ─────────────────────────────────────────────── */}
         <section className="grid gap-12 py-16 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:py-24">
           <div>
-            <span className="inline-block border border-line-lit px-3 py-1.5 text-[11px] tracking-[0.18em] text-volt">
+            <span className="inline-block border border-line-lit px-3 py-1.5 text-[11px] tracking-[0.18em] text-ember">
               ● OPEN SOURCE · BUILT IN PUBLIC
             </span>
             <h1 className="mt-7 font-display text-6xl leading-[0.92] font-700 tracking-tight text-alu md:text-7xl">
               ORBIE
             </h1>
-            <p className="mt-5 max-w-[24ch] font-display text-4xl leading-[1.05] font-600 text-volt md:text-5xl">
+            <p className="mt-5 max-w-[24ch] font-display text-4xl leading-[1.05] font-600 text-ember md:text-5xl">
               A home robot that outlives us.
             </p>
             <p className="mt-7 max-w-[52ch] text-[15px] leading-relaxed text-alu-2">
@@ -50,13 +50,13 @@ export default function Page() {
             <div className="mt-9 flex flex-wrap gap-3">
               <a
                 href="#body"
-                className="border border-volt bg-volt px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-ground transition hover:bg-transparent hover:text-volt"
+                className="border border-ember bg-ember px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-ground transition hover:bg-transparent hover:text-ember"
               >
                 SEE WHAT IS INSIDE
               </a>
               <a
                 href="#log"
-                className="border border-line-lit px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-alu-2 transition hover:border-volt hover:text-volt"
+                className="border border-line-lit px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-alu-2 transition hover:border-ember hover:text-ember"
               >
                 READ THE BUILD LOG
               </a>
@@ -85,7 +85,7 @@ export default function Page() {
         <section className="grid gap-px border-y border-line bg-line sm:grid-cols-3 lg:grid-cols-6">
           {NUMBERS.map((x) => (
             <div key={x.label} className="bg-ground px-5 py-7">
-              <p className="font-display text-3xl font-700 text-volt">{x.n}</p>
+              <p className="font-display text-3xl font-700 text-ember">{x.n}</p>
               <p className="mt-1.5 text-[12px] leading-snug text-alu-3">{x.label}</p>
             </div>
           ))}
@@ -179,7 +179,7 @@ export default function Page() {
                 </figure>
                 <div className="p-7">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-display text-3xl font-700 text-volt">{g.tag}</span>
+                    <span className="font-display text-3xl font-700 text-ember">{g.tag}</span>
                     <span className="text-[11px] tracking-[0.14em] text-alu-3">{g.when}</span>
                   </div>
                   <h3 className="mt-4 font-display text-lg font-600 text-alu">{g.name}</h3>
@@ -211,14 +211,14 @@ export default function Page() {
                 key={`${e.when}-${i}`}
                 className="grid gap-2 border-b border-line py-5 md:grid-cols-[130px_120px_1fr] md:gap-8"
               >
-                <span className="text-[11px] tracking-[0.14em] text-volt">{e.when}</span>
+                <span className="text-[11px] tracking-[0.14em] text-ember">{e.when}</span>
                 <span className="text-[11px] tracking-[0.1em] text-alu-3">{e.who}</span>
                 <span className="flex items-start gap-3 text-[15px] leading-relaxed text-alu-2">
                   <span
                     aria-hidden
                     className={[
                       'mt-2 h-1.5 w-1.5 shrink-0 rounded-full',
-                      e.kind === 'snag' ? 'bg-alu-3' : e.kind === 'win' ? 'bg-volt' : 'bg-line-lit',
+                      e.kind === 'snag' ? 'bg-alu-3' : e.kind === 'win' ? 'bg-ember' : 'bg-line-lit',
                     ].join(' ')}
                   />
                   <span>&ldquo;{e.line}&rdquo;</span>
@@ -260,18 +260,18 @@ export default function Page() {
               </p>
 
               <div className="mt-10 border border-line-lit bg-panel/60 p-6">
-                <p className="text-[11px] tracking-[0.18em] text-volt">CREDIT WHERE IT IS OWED</p>
+                <p className="text-[11px] tracking-[0.18em] text-ember">CREDIT WHERE IT IS OWED</p>
                 <p className="mt-3.5 max-w-[52ch] text-[14px] leading-relaxed text-alu-2">
                   V1 is a replication of{' '}
-                  <a href={LINKS.espRoll} target="_blank" rel="noreferrer" className="text-alu underline decoration-line-lit underline-offset-4 hover:decoration-volt">
+                  <a href={LINKS.espRoll} target="_blank" rel="noreferrer" className="text-alu underline decoration-line-lit underline-offset-4 hover:decoration-ember">
                     ESP-ROLL
                   </a>{' '}
                   by{' '}
-                  <a href={LINKS.maxImagination} target="_blank" rel="noreferrer" className="text-alu underline decoration-line-lit underline-offset-4 hover:decoration-volt">
+                  <a href={LINKS.maxImagination} target="_blank" rel="noreferrer" className="text-alu underline decoration-line-lit underline-offset-4 hover:decoration-ember">
                     Max Imagination
                   </a>
                   , published under CC BY-NC-SA, which also credits{' '}
-                  <a href={LINKS.s60sc} target="_blank" rel="noreferrer" className="text-alu underline decoration-line-lit underline-offset-4 hover:decoration-volt">
+                  <a href={LINKS.s60sc} target="_blank" rel="noreferrer" className="text-alu underline decoration-line-lit underline-offset-4 hover:decoration-ember">
                     s60sc
                   </a>{' '}
                   for the ESP32-CAM firmware. That project is the reason this one
@@ -287,7 +287,7 @@ export default function Page() {
                   <li key={l.what} className="bg-ground p-5">
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                       <span className="text-[13px] text-alu">{l.what}</span>
-                      <span className="text-[12px] font-600 tracking-[0.08em] text-volt">
+                      <span className="text-[12px] font-600 tracking-[0.08em] text-ember">
                         {l.licence}
                       </span>
                     </div>
@@ -379,7 +379,7 @@ export default function Page() {
             </div>
 
             <div className="self-start border border-line bg-panel/60 p-7">
-              <p className="text-[11px] tracking-[0.18em] text-volt">THE SIX PEOPLE WHO BUILT IT</p>
+              <p className="text-[11px] tracking-[0.18em] text-ember">THE SIX PEOPLE WHO BUILT IT</p>
               <ul className="mt-5 grid gap-2.5">
                 {TEAM.map((t) => (
                   <li key={t} className="border-b border-line pb-2.5 text-[15px] text-alu">
@@ -420,11 +420,11 @@ export default function Page() {
             </p>
           </div>
           <nav className="flex flex-wrap gap-6 text-[12px] tracking-[0.14em]">
-            <a href={LINKS.x} className="text-alu-2 hover:text-volt">@ORBIE_ROBOT</a>
-            <a href={LINKS.github} className="text-alu-2 hover:text-volt">GITHUB</a>
-            <a href="#log" className="text-alu-2 hover:text-volt">BUILD LOG</a>
-            <a href="#gaps" className="text-alu-2 hover:text-volt">WHAT IS NOT TRUE YET</a>
-            <a href="/brand" className="text-alu-2 hover:text-volt">BRAND</a>
+            <a href={LINKS.x} className="text-alu-2 hover:text-ember">@ORBIE_ROBOT</a>
+            <a href={LINKS.github} className="text-alu-2 hover:text-ember">GITHUB</a>
+            <a href="#log" className="text-alu-2 hover:text-ember">BUILD LOG</a>
+            <a href="#gaps" className="text-alu-2 hover:text-ember">WHAT IS NOT TRUE YET</a>
+            <a href="/brand" className="text-alu-2 hover:text-ember">BRAND</a>
           </nav>
         </div>
       </footer>

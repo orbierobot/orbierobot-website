@@ -21,13 +21,13 @@ import { useId } from 'react';
  * further apart than the hardware's: the literal proportion reads as a pause
  * button at small sizes, which is a hard association to shake. */
 const LENS_R = 29;
-const EYE = { w: 18, h: 26, r: 8, gap: 20 };
+const EYE = { w: 22, h: 32, r: 10, gap: 22 };
 
 /* The dot-matrix cut: the same eye, drawn at the resolution of the display it
- * is a picture of. 3 x 4 dots at this pitch measure 19.8 x 27, within a unit of
- * the solid eye above — so these are one shape at two resolutions rather than
+ * is a picture of. 3 x 4 dots at this pitch measure 22.6 x 30.8, within about a
+ * unit of the solid eye above — so these are one shape at two resolutions, not
  * two logos. Below about 64px the dots merge; use the solid cut there. */
-const DOT = { cols: 3, rows: 4, size: 5.4, gap: 1.8, eyeGap: 19 };
+const DOT = { cols: 3, rows: 4, size: 6.2, gap: 2.0, eyeGap: 22 };
 
 function matrixDots() {
   const ew = DOT.cols * DOT.size + (DOT.cols - 1) * DOT.gap;

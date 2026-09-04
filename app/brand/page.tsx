@@ -15,7 +15,7 @@ const COLOURS = [
   { name: 'Ground', hex: '#0A0D12', use: 'The background, nearly everywhere.', on: 'light' },
   { name: 'Panel', hex: '#0E1319', use: 'Raised surfaces, cards, the ticker.', on: 'light' },
   { name: 'Line', hex: '#1E2831', use: 'Hairlines and grid rules.', on: 'light' },
-  { name: 'Volt', hex: '#CCFF00', use: 'The accent. The mark, live values, one action per screen.', on: 'dark' },
+  { name: 'Ember', hex: '#FF6B2C', use: 'The accent. The mark, live values, one action per screen.', on: 'dark' },
   { name: 'Alu', hex: '#F2F3F2', use: 'Primary text.', on: 'dark' },
   { name: 'Alu 2', hex: '#98A3AC', use: 'Body copy.', on: 'dark' },
   { name: 'Alu 3', hex: '#5D6870', use: 'Labels, captions, anything secondary.', on: 'dark' },
@@ -57,7 +57,7 @@ export default function BrandPage() {
             blink, which is worth more to a robot project than it sounds.
           </p>
 
-          <div className="mt-14 flex flex-wrap items-end gap-x-16 gap-y-10 text-volt">
+          <div className="mt-14 flex flex-wrap items-end gap-x-16 gap-y-10 text-ember">
             <figure>
               <OrbieMark size={132} blink />
               <figcaption className="mt-4 text-[10px] tracking-[0.14em] text-alu-3">MARK</figcaption>
@@ -82,7 +82,7 @@ export default function BrandPage() {
             correct next to the eyes. Clear space on all sides is the width of one eye.
           </p>
           <div className="flex flex-wrap items-center gap-x-16 gap-y-10">
-            <div className="text-volt"><OrbieLockup size={52} blink /></div>
+            <div className="text-ember"><OrbieLockup size={52} blink /></div>
             <div className="text-alu"><OrbieLockup size={36} /></div>
             <div className="bg-alu px-7 py-5 text-ground"><OrbieLockup size={36} /></div>
           </div>
@@ -97,20 +97,29 @@ export default function BrandPage() {
                 One accent, and it is not a gradient.
               </h2>
               <p className="mt-6 max-w-[52ch] text-[15px] leading-relaxed text-alu-2">
-                Volt does the work of an indicator lamp: it marks the thing that is live,
+                Ember does the work of an indicator lamp: it marks the thing that is live,
                 the thing that is measured, and the one action worth taking. If more than
-                a few percent of a screen is volt, it has stopped meaning anything.
+                a few percent of a screen is ember, it has stopped meaning anything.
               </p>
               <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed text-alu-2">
-                It is also deliberately not the green every robotics and crypto project
-                reaches for. Nothing else in the category looks like this.
+                It replaced an acid yellow-green, and the reason is the film. The film is
+                graded teal, and orange is teal&rsquo;s complement — the pairing every
+                colourist reaches for because it works. Yellow-green sits next to teal on
+                the wheel and goes muddy against it. The accent now agrees with the one
+                finished asset the project has instead of fighting it.
+              </p>
+              <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed text-alu-2">
+                It also suits the thing itself. Orbie sits on a desk and keeps a dog
+                company; an acid green reads as an instrument, and this is not an
+                instrument.
               </p>
               <p className="mt-6 max-w-[52ch] border-l-2 border-line-lit pl-5 text-[14px] leading-relaxed text-alu-3">
-                One inconsistency worth knowing about: the launch film ends on a teal
-                glow, and the eyes in it are cyan. That predates this palette. Either the
-                film gets re-graded to volt when it is next cut, or cyan gets defined as
-                the robot&rsquo;s own light and volt stays the interface colour — but
-                right now two accents are in circulation and only one is written down.
+                Worth knowing where the colour came from: the wheels in the film carry an
+                orange rim, and that is what suggested it. On the physical prototype the
+                wheels are plain black — the rim is a decision made in the render, not a
+                property of the hardware. It is still the only deliberate colour choice
+                anyone has made about how this robot looks, which is reason enough to
+                build on it, but it is a choice rather than an observation.
               </p>
             </div>
 
@@ -140,7 +149,7 @@ export default function BrandPage() {
           <SectionLabel n="03">TYPE</SectionLabel>
           <div className="grid gap-px bg-line md:grid-cols-2">
             <div className="bg-ground p-8">
-              <p className="text-[11px] tracking-[0.16em] text-volt">SPACE GROTESK</p>
+              <p className="text-[11px] tracking-[0.16em] text-ember">SPACE GROTESK</p>
               <p className="mt-5 font-display text-5xl font-700 leading-none text-alu">Aa</p>
               <p className="mt-6 font-display text-2xl font-600 text-alu">
                 Headlines and the wordmark
@@ -151,7 +160,7 @@ export default function BrandPage() {
               </p>
             </div>
             <div className="bg-ground p-8">
-              <p className="text-[11px] tracking-[0.16em] text-volt">JETBRAINS MONO</p>
+              <p className="text-[11px] tracking-[0.16em] text-ember">JETBRAINS MONO</p>
               <p className="mt-5 text-5xl font-500 leading-none text-alu">Aa</p>
               <p className="mt-6 font-display text-2xl font-600 text-alu">
                 Body, labels, everything else
@@ -176,14 +185,14 @@ export default function BrandPage() {
           <ul className="grid gap-px bg-line sm:grid-cols-2">
             {DOWNLOADS.map((d) => (
               <li key={d.file} className="flex items-start gap-5 bg-ground p-5">
-                <span className="mt-0.5 shrink-0 text-volt">
+                <span className="mt-0.5 shrink-0 text-ember">
                   <OrbieMark size={34} variant={d.file.includes('matrix') ? 'matrix' : 'solid'} />
                 </span>
                 <span>
                   <a
                     href={`/brand/${d.file}`}
                     download
-                    className="text-[14px] text-alu underline decoration-line-lit underline-offset-4 hover:decoration-volt"
+                    className="text-[14px] text-alu underline decoration-line-lit underline-offset-4 hover:decoration-ember"
                   >
                     {d.file}
                   </a>
@@ -214,9 +223,9 @@ export default function BrandPage() {
             <OrbieLockup size={30} />
           </div>
           <nav className="flex flex-wrap gap-6 text-[12px] tracking-[0.14em]">
-            <a href="/" className="text-alu-2 hover:text-volt">HOME</a>
-            <a href={LINKS.x} className="text-alu-2 hover:text-volt">@ORBIE_ROBOT</a>
-            <a href={LINKS.github} className="text-alu-2 hover:text-volt">GITHUB</a>
+            <a href="/" className="text-alu-2 hover:text-ember">HOME</a>
+            <a href={LINKS.x} className="text-alu-2 hover:text-ember">@ORBIE_ROBOT</a>
+            <a href={LINKS.github} className="text-alu-2 hover:text-ember">GITHUB</a>
           </nav>
         </div>
       </footer>

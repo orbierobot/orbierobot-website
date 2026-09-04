@@ -389,7 +389,7 @@ export const IDEAS = [
   },
   {
     title: 'Patrol that makes it home',
-    body: 'Route planning that watches the cell voltage and turns back while it still can. Unglamorous, and the difference between a demo and a device.',
+    body: 'Route planning that watches the cell emberage and turns back while it still can. Unglamorous, and the difference between a demo and a device.',
     uses: ['power', 'drive', 'brain'],
     effort: 'A term project',
   },

@@ -29,7 +29,7 @@ export function Ideas() {
           className={[
             'border px-2.5 py-1.5 text-[11px] tracking-[0.1em] transition',
             filter === null
-              ? 'border-volt bg-volt/10 text-volt'
+              ? 'border-ember bg-ember/10 text-ember'
               : 'border-line text-alu-3 hover:border-line-lit hover:text-alu-2',
           ].join(' ')}
         >
@@ -43,7 +43,7 @@ export function Ideas() {
             className={[
               'border px-2.5 py-1.5 text-[11px] tracking-[0.1em] transition',
               filter === s.id
-                ? 'border-volt bg-volt/10 text-volt'
+                ? 'border-ember bg-ember/10 text-ember'
                 : 'border-line text-alu-3 hover:border-line-lit hover:text-alu-2',
             ].join(' ')}
           >

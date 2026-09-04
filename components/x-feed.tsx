@@ -45,7 +45,7 @@ export function XFeed() {
       {/* Follow card — never depends on the embed. */}
       <div className="flex flex-col justify-between gap-8 bg-ground p-8">
         <div>
-          <p className="text-[11px] tracking-[0.18em] text-volt">THE BUILD IS POSTED AS IT HAPPENS</p>
+          <p className="text-[11px] tracking-[0.18em] text-ember">THE BUILD IS POSTED AS IT HAPPENS</p>
           <p className="mt-5 font-display text-3xl font-700 leading-tight text-alu">@orbie_robot</p>
           <p className="mt-4 max-w-[46ch] text-[15px] leading-relaxed text-alu-2">
             Firmware that did not compile, parts that arrived wrong, the display
@@ -58,7 +58,7 @@ export function XFeed() {
             href={LINKS.x}
             target="_blank"
             rel="noreferrer"
-            className="border border-volt bg-volt px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-ground transition hover:bg-transparent hover:text-volt"
+            className="border border-ember bg-ember px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-ground transition hover:bg-transparent hover:text-ember"
           >
             FOLLOW @ORBIE_ROBOT
           </a>
@@ -66,7 +66,7 @@ export function XFeed() {
             href={LINKS.xFounder}
             target="_blank"
             rel="noreferrer"
-            className="border border-line-lit px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-alu-2 transition hover:border-volt hover:text-volt"
+            className="border border-line-lit px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-alu-2 transition hover:border-ember hover:text-ember"
           >
             @JAISWALASHOK
           </a>
@@ -94,7 +94,7 @@ export function XFeed() {
               X&rsquo;s embed did not load — usually tracking protection or an ad
               blocker. The posts are all still there.
             </p>
-            <a href={LINKS.x} target="_blank" rel="noreferrer" className="text-[13px] text-volt hover:underline">
+            <a href={LINKS.x} target="_blank" rel="noreferrer" className="text-[13px] text-ember hover:underline">
               Open the timeline on x.com →
             </a>
           </div>

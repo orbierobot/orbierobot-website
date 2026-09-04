@@ -27,22 +27,22 @@ export function StatusBar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-ground/90 backdrop-blur">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-3">
-        <a href="#top" className="flex items-center gap-2.5 text-volt">
+        <a href="#top" className="flex items-center gap-2.5 text-ember">
           <OrbieMark size={20} blink />
           <span className="font-display text-sm font-700 tracking-[0.22em] text-alu">
             ORBIE.SYS
           </span>
         </a>
         <div className="hidden items-center gap-6 text-[11px] tracking-[0.14em] text-alu-3 md:flex">
-          <span>STATUS <span className="text-volt">BUILDING</span></span>
+          <span>STATUS <span className="text-ember">BUILDING</span></span>
           <span>PHASE <span className="text-alu-2">OPEN SOURCE</span></span>
           <span>GEN <span className="text-alu-2">V3</span></span>
         </div>
         <nav className="flex items-center gap-4 text-[11px] tracking-[0.14em]">
-          <a href="#body" className="hidden text-alu-2 hover:text-volt sm:inline">BODY</a>
-          <a href="#build" className="hidden text-alu-2 hover:text-volt sm:inline">BUILD</a>
-          <a href="#log" className="text-alu-2 hover:text-volt">LOG</a>
-          <a href="https://github.com/orbierobot" className="text-alu-2 hover:text-volt">
+          <a href="#body" className="hidden text-alu-2 hover:text-ember sm:inline">BODY</a>
+          <a href="#build" className="hidden text-alu-2 hover:text-ember sm:inline">BUILD</a>
+          <a href="#log" className="text-alu-2 hover:text-ember">LOG</a>
+          <a href="https://github.com/orbierobot" className="text-alu-2 hover:text-ember">
             REPO
           </a>
         </nav>
@@ -72,7 +72,7 @@ export function Ticker() {
 
 export function SectionLabel({ n, children }: { n: string; children: React.ReactNode }) {
   return (
-    <p className="mb-5 font-mono text-[11px] tracking-[0.2em] text-volt">
+    <p className="mb-5 font-mono text-[11px] tracking-[0.2em] text-ember">
       // {n} — {children}
     </p>
   );
