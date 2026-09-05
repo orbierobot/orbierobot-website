@@ -114,12 +114,12 @@ export default function BrandPage() {
                 instrument.
               </p>
               <p className="mt-6 max-w-[52ch] border-l-2 border-line-lit pl-5 text-[14px] leading-relaxed text-alu-3">
-                Worth knowing where the colour came from: the wheels in the film carry an
-                orange rim, and that is what suggested it. On the physical prototype the
-                wheels are plain black — the rim is a decision made in the render, not a
-                property of the hardware. It is still the only deliberate colour choice
-                anyone has made about how this robot looks, which is reason enough to
-                build on it, but it is a choice rather than an observation.
+                Where the colour came from: the V3 wheel carries a rust-orange rim around
+                a white hub, and the film reproduces it. So the accent is taken off the
+                machine rather than invented for it — which is the only good reason to
+                pick a brand colour. Ember is a cleaner, brighter reading of that rim
+                than the prototype photographs show, because they were shot under warm
+                indoor light that drags everything toward brown.
               </p>
             </div>
 
