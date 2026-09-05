@@ -113,12 +113,22 @@ export default function BrandPage() {
                 company; an acid green reads as an instrument, and this is not an
                 instrument.
               </p>
-              <p className="mt-6 max-w-[52ch] border-l-2 border-line-lit pl-5 text-[14px] leading-relaxed text-alu-3">
-                Where the colour came from: the V3 wheel carries a rust-orange rim around
-                a white hub, and the film reproduces it. So the accent is taken off the
-                machine rather than invented for it — which is the only good reason to
-                pick a brand colour. Ember is a cleaner, brighter reading of that rim
-                than the prototype photographs show, because they were shot under warm
+              <figure className="mt-8 max-w-[52ch] border border-line bg-panel/60 p-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/build/real-v3-side.jpg"
+                  alt="The V3 prototype in profile, showing the rust-orange rim around the white wheel hub"
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+                <figcaption className="px-1 pt-2.5 text-[10px] leading-relaxed tracking-[0.14em] text-alu-3">
+                  WHERE THE COLOUR CAME FROM — THE V3 WHEEL RIM
+                </figcaption>
+              </figure>
+              <p className="mt-5 max-w-[52ch] border-l-2 border-line-lit pl-5 text-[14px] leading-relaxed text-alu-3">
+                The accent is taken off the machine rather than invented for it, which is
+                the only good reason to pick a brand colour. Ember is a cleaner, brighter
+                reading of that rim than the photograph shows — it was shot under warm
                 indoor light that drags everything toward brown.
               </p>
             </div>
