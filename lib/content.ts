@@ -280,14 +280,13 @@ export const ENDPOINTS = [
 ] as const;
 
 /* The three lines that make the point. Kept short enough to actually retype. */
-export const EXAMPLE = `# what does it see?
-curl -s orbie.local/capture -o frame.jpg
+export const EXAMPLE = `# the robot prints its IP on boot — no mDNS on this build yet
+ORBIE=http://192.168.1.42
 
-# what does it feel?
-curl -s orbie.local/status
-
-# go and have a look
-curl -s "orbie.local/motor?drive=40&turn=0" && curl -s "orbie.local/face?expr=happy"`;
+curl -s $ORBIE/capture -o frame.jpg            # what does it see?
+curl -s $ORBIE/status                          # what does it feel?
+curl -s "$ORBIE/motor?drive=40&turn=0"         # go and have a look
+curl -s "$ORBIE/face?expr=happy"               # and be pleased about it`;
 
 /* ── What it is for ───────────────────────────────────────────────────────
  * Deliberately ordinary. The robot is unusual; the reasons to want one should
@@ -642,6 +641,7 @@ export const GAPS = [
   'Nobody outside the team has built one from the published files. Until someone has, we do not know whether the repository is genuinely buildable.',
   'The centre of gravity on the current prototype is a known unsolved problem.',
   'Ambient noise on the microphone is not good enough yet.',
+  'The ESP-IDF firmware advertises no mDNS name, so you reach the robot by IP. The older Arduino reference build still announces itself as pawme.local — the rename has not reached the firmware.',
   'There is no gathering place that is not X. A forum or chat is owed to anyone who wants to contribute.',
 ] as const;
 

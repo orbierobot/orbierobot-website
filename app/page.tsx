@@ -201,7 +201,8 @@ export default function Page() {
                 <code className="px-1">Firmware/components/camera/camera_server.c</code>
                 — check them there rather than taking this page&rsquo;s word for it. Not
                 every route has been verified on hardware yet; the ones we have run are
-                distance, the face and the camera.
+                distance, the face and the camera. There is no mDNS name on this build,
+                so you reach it by IP.
               </p>
             </div>
           </div>
