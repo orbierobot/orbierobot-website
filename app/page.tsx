@@ -3,6 +3,8 @@ import { BodyMap } from '@/components/body-map';
 import { Ideas } from '@/components/ideas';
 import { XFeed } from '@/components/x-feed';
 import {
+  ENDPOINTS,
+  EXAMPLE,
   GAPS,
   GENERATIONS,
   LICENCES,
@@ -53,6 +55,12 @@ export default function Page() {
                 className="border border-ember bg-ember px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-ground transition hover:bg-transparent hover:text-ember"
               >
                 SEE WHAT IS INSIDE
+              </a>
+              <a
+                href="#interface"
+                className="border border-line-lit px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-alu-2 transition hover:border-ember hover:text-ember"
+              >
+                DRIVE IT WITH CURL
               </a>
               <a
                 href="#log"
@@ -139,9 +147,69 @@ export default function Page() {
           <BodyMap />
         </section>
 
+        {/* ── The interface ────────────────────────────────────── */}
+        <section id="interface" className="border-t border-line py-20">
+          <SectionLabel n="03">THE INTERFACE</SectionLabel>
+          <h2 className="max-w-[26ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
+            Anything that can read a JPEG can drive this robot.
+          </h2>
+          <p className="mt-6 max-w-[62ch] text-[15px] leading-relaxed text-alu-2">
+            Every route is a GET. No SDK, no account, no cloud in the middle — the
+            robot runs its own web server and answers to a shell, a browser bar, or
+            any language that can make an HTTP request. The heavy thinking happens
+            wherever you send the frames.
+          </p>
+
+          <div className="mt-12 grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[560px] border-collapse text-[14px]">
+                <tbody>
+                  {ENDPOINTS.map((e) => (
+                    <tr key={e.route} className="border-b border-line align-top">
+                      <td className="w-[210px] py-4 pr-6">
+                        <code className="text-[13px] text-ember">{e.route}</code>
+                      </td>
+                      <td className="py-4 pr-6">
+                        <span className="block text-alu">{e.does}</span>
+                        {e.note && (
+                          <span className="mt-1.5 block text-[13px] leading-relaxed text-alu-3">
+                            {e.note}
+                          </span>
+                        )}
+                        <code className="mt-2 block text-[11px] leading-relaxed break-all text-alu-3">
+                          → {e.returns}
+                        </code>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <pre className="regmark relative overflow-x-auto border border-line bg-panel/70 p-6 text-[12.5px] leading-relaxed text-alu-2">
+                <code>{EXAMPLE}</code>
+              </pre>
+              <p className="mt-6 max-w-[46ch] text-[15px] leading-relaxed text-alu-2">
+                That is the entire integration surface. Point <code className="text-alu-3">/capture</code>{' '}
+                at whatever model you like, decide something, and call{' '}
+                <code className="text-alu-3">/motor</code>. The robot only has to be
+                honest about what it sees and reliable about what it does.
+              </p>
+              <p className="mt-4 max-w-[46ch] text-[13px] leading-relaxed text-alu-3">
+                Routes are read from the published firmware, in
+                <code className="px-1">Firmware/components/camera/camera_server.c</code>
+                — check them there rather than taking this page&rsquo;s word for it. Not
+                every route has been verified on hardware yet; the ones we have run are
+                distance, the face and the camera.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* ── What you could build ─────────────────────────────── */}
         <section id="build" className="border-t border-line py-20">
-          <SectionLabel n="03">WHAT YOU COULD BUILD</SectionLabel>
+          <SectionLabel n="04">WHAT YOU COULD BUILD</SectionLabel>
           <h2 className="max-w-[26ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
             A camera, a laser, a thermometer and wheels, with nothing locked.
           </h2>
@@ -151,6 +219,14 @@ export default function Page() {
             project stops being a product with a plugin system — you can change
             the body, not just the behaviour.
           </p>
+          <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-alu-2">
+            Most of what follows is a few lines against{' '}
+            <a href="#interface" className="text-alu underline decoration-line-lit underline-offset-4 hover:decoration-ember">
+              the endpoints above
+            </a>
+            . The ones marked &ldquo;a term project&rdquo; are where you would open
+            the CAD or the firmware instead.
+          </p>
           <div className="mt-12">
             <Ideas />
           </div>
@@ -158,7 +234,7 @@ export default function Page() {
 
         {/* ── Generations ──────────────────────────────────────── */}
         <section id="generations" className="border-t border-line py-20">
-          <SectionLabel n="04">THREE GENERATIONS</SectionLabel>
+          <SectionLabel n="05">THREE GENERATIONS</SectionLabel>
           <h2 className="max-w-[22ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
             Built three times, in the open, since July 2025.
           </h2>
@@ -192,7 +268,7 @@ export default function Page() {
 
         {/* ── Build log ────────────────────────────────────────── */}
         <section id="log" className="border-t border-line py-20">
-          <SectionLabel n="05">THE RECEIPTS</SectionLabel>
+          <SectionLabel n="06">THE RECEIPTS</SectionLabel>
           <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <h2 className="max-w-[26ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
               Including every day it did not work.
@@ -239,7 +315,7 @@ export default function Page() {
 
         {/* ── Open, and what that costs us to say honestly ─────── */}
         <section id="open" className="border-t border-line py-20">
-          <SectionLabel n="06">WHAT OPEN MEANS HERE</SectionLabel>
+          <SectionLabel n="07">WHAT OPEN MEANS HERE</SectionLabel>
           <div className="grid gap-12 lg:grid-cols-[1.05fr_1fr]">
             <div>
               <h2 className="max-w-[22ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
@@ -304,7 +380,7 @@ export default function Page() {
 
         {/* ── The gaps ─────────────────────────────────────────── */}
         <section id="gaps" className="border-t border-line py-20">
-          <SectionLabel n="07">WHAT IS NOT TRUE YET</SectionLabel>
+          <SectionLabel n="08">WHAT IS NOT TRUE YET</SectionLabel>
           <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
             <div>
               <h2 className="max-w-[20ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
@@ -329,7 +405,7 @@ export default function Page() {
 
         {/* ── Who is behind it ─────────────────────────────────── */}
         <section id="who" className="border-t border-line py-20">
-          <SectionLabel n="08">WHO IS BEHIND IT</SectionLabel>
+          <SectionLabel n="09">WHO IS BEHIND IT</SectionLabel>
           <div className="grid gap-12 lg:grid-cols-[1.05fr_1fr]">
             <div>
               <h2 className="max-w-[22ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
@@ -397,7 +473,7 @@ export default function Page() {
 
         {/* ── Follow ───────────────────────────────────────────── */}
         <section id="follow" className="border-t border-line py-20">
-          <SectionLabel n="09">FOLLOW THE BUILD</SectionLabel>
+          <SectionLabel n="10">FOLLOW THE BUILD</SectionLabel>
           <h2 className="mb-12 max-w-[24ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
             The next generation gets built in public too.
           </h2>

@@ -219,6 +219,76 @@ export const SUBSYSTEMS: Subsystem[] = [
   },
 ];
 
+/* ── The interface ────────────────────────────────────────────────────────
+ * Read straight out of the published firmware
+ * (Firmware/components/camera/camera_server.c), not from anyone's memory.
+ * Every route is a GET, which is the whole point: the robot is drivable from a
+ * shell, a browser bar, or any language that can make an HTTP request.
+ *
+ * This is the section that recruits builders. A film makes someone want one; a
+ * copy-pasteable curl makes them want to build something tonight.
+ */
+export const ENDPOINTS = [
+  {
+    route: 'GET /capture',
+    does: 'A single still, as JPEG.',
+    returns: 'image/jpeg',
+    note: 'The one to point a vision model at. No firmware changes needed.',
+  },
+  {
+    route: 'GET /stream',
+    does: 'Live MJPEG.',
+    returns: 'multipart/x-mixed-replace',
+    note: 'Drop it straight into an <img src>.',
+  },
+  {
+    route: 'GET /status',
+    does: 'Every sensor, once.',
+    returns: '{"distance":37,"temp_ambient":45.0,"temp_object":39.8,"laser":false,"drive":0,"turn":0}',
+    note: 'Distance in millimetres, temperatures in °C.',
+  },
+  {
+    route: 'GET /motor?drive=&turn=',
+    does: 'Drive and steer.',
+    returns: 'ok',
+    note: 'Differential drive — the two wheels run against each other to turn.',
+  },
+  {
+    route: 'GET /laser',
+    does: 'Toggles the laser.',
+    returns: 'LASER_ON / LASER_OFF',
+    note: 'One call, no argument. The cat does not need an API key.',
+  },
+  {
+    route: 'GET /face?expr=',
+    does: 'Puts an expression on the display.',
+    returns: 'ok / unknown expr',
+    note: 'bliss · center · down · happy · heart · left · love · neutral · right · up',
+  },
+  {
+    route: 'GET /beep',
+    does: 'Speaker test tone.',
+    returns: 'ok',
+    note: '',
+  },
+  {
+    route: 'GET /ota/update',
+    does: 'Push new firmware over the air.',
+    returns: '{"state":"...","percent":0,"message":"..."}',
+    note: 'With /ota/info, /ota/status and /ota/rollback. You can brick-proof your own experiments.',
+  },
+] as const;
+
+/* The three lines that make the point. Kept short enough to actually retype. */
+export const EXAMPLE = `# what does it see?
+curl -s orbie.local/capture -o frame.jpg
+
+# what does it feel?
+curl -s orbie.local/status
+
+# go and have a look
+curl -s "orbie.local/motor?drive=40&turn=0" && curl -s "orbie.local/face?expr=happy"`;
+
 /* ── What it is for ───────────────────────────────────────────────────────
  * Deliberately ordinary. The robot is unusual; the reasons to want one should
  * not have to be.
