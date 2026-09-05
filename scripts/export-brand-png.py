@@ -90,6 +90,24 @@ def main():
         img.save(OUT / name)
         print(f"  {name:34} {img.size[0]}x{img.size[1]}")
 
+    # A real multi-resolution favicon.ico at the site root.
+    #
+    # Next emits app/icon.svg and links it, which modern browsers honour — but
+    # plenty of things still request /favicon.ico blind: Safari's older paths,
+    # feed readers, link unfurlers, and anything scraping a preview. Without
+    # this the root request 404s, which is how you end up with a blank square
+    # in someone's bookmark bar.
+    # Pillow's ICO writer resizes the source itself, so hand it one clean
+    # render at the largest size and let it derive the rest. (Passing a list of
+    # pre-rendered frames silently produces a single-size icon.)
+    ico = OUT.parent.parent / "favicon.ico"
+    sizes = [(n, n) for n in (16, 32, 48, 64, 128, 256)]
+    draw_mark(256, EMBER, bg=GROUND, geom=FAVICON).save(ico, format="ICO", sizes=sizes)
+    from PIL import Image as _I
+    with _I.open(ico) as chk:
+        got = sorted({s[0] for s in chk.info.get("sizes", [])})
+    print(f"  {'favicon.ico':34} {'/'.join(map(str, got))}")
+
 
 if __name__ == "__main__":
     main()

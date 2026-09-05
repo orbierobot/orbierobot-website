@@ -18,7 +18,7 @@ export const LINKS = {
   x: 'https://x.com/orbie_robot',
   xFounder: 'https://x.com/jaiswalashok',
   github: 'https://github.com/orbierobot',
-  espRoll: 'https://www.instructables.com/ESP-ROLL-Ball-Robot-With-Camera/',
+  espRoll: 'https://www.instructables.com/ESP-ROLL-Build-a-Spherical-Self-balancing-Robot-Wi/',
   maxImagination: 'https://www.instructables.com/member/Max+Imagination/',
   s60sc: 'https://github.com/s60sc/ESP32-CAM_MJPEG2SD',
 } as const;
@@ -402,10 +402,11 @@ export const GENERATIONS = [
     when: 'Jul – Sep 2025',
     name: 'The ball',
     body:
-      'A replication of the open-source ESP-ROLL project, built to learn what would and would ' +
-      'not work. A transparent sphere with the battery as ballast. Two weeks was the estimate.',
-    photo: '/build/v1-inspiration.jpg',
-    caption: 'The BB-8 toy the first thread pointed at, 22 Jul 2025',
+      'A replication of the open-source ESP-ROLL ball bot, built to learn what would and would ' +
+      'not work: an ESP32 camera in a transparent sphere, driven by two wheels, with the ' +
+      'battery slung underneath as the ballast that makes it roll. Two weeks was the estimate.',
+    photo: '/build/v1-ball.jpg',
+    caption: 'V1 assembly, camera and drive inside the sphere — 27 Sep 2025',
   },
   {
     tag: 'V2',

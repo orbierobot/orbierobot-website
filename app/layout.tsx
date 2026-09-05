@@ -14,7 +14,13 @@ export const metadata: Metadata = {
     images: ['/media/orbie-poster.jpg'],
   },
   icons: {
-    icon: '/icon.svg',
+    /* SVG first for anything modern; the .ico is the fallback for the many
+     * clients that request /favicon.ico blind — Safari's older paths, feed
+     * readers, link unfurlers. Without it that request 404s. */
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
     apple: '/brand/png/apple-touch-icon-180.png',
   },
   twitter: {
