@@ -2,6 +2,7 @@ import { StatusBar, Ticker, SectionLabel } from '@/components/chrome';
 import { BodyMap } from '@/components/body-map';
 import { Ideas } from '@/components/ideas';
 import { XFeed } from '@/components/x-feed';
+import { ProofOfLife } from '@/components/proof-of-life';
 import {
   FAQ,
   GENERATIONS,
@@ -414,6 +415,9 @@ export default function Page() {
             <p className="mt-3 text-[12px] text-alu-3">
               Formerly built as PawMe, and as OpenPaw. Same robot, same people, same commit history.
             </p>
+            <div className="mt-5">
+              <ProofOfLife />
+            </div>
           </div>
           <nav className="flex flex-wrap gap-6 text-[12px] tracking-[0.14em]">
             <a href={LINKS.x} className="text-alu-2 hover:text-ember">@ORBIE_ROBOT</a>

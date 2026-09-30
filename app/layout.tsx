@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://orbierobot.com'),
+  metadataBase: new URL('https://www.orbierobot.com'),
   title: 'Orbie — an open-source home robot',
   description:
     'Three hardware generations in eight months. The CAD, the firmware and the failures are public.',
