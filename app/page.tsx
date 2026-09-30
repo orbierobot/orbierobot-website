@@ -3,19 +3,17 @@ import { BodyMap } from '@/components/body-map';
 import { Ideas } from '@/components/ideas';
 import { XFeed } from '@/components/x-feed';
 import {
-  ENDPOINTS,
-  EXAMPLE,
-  GAPS,
+  FAQ,
   GENERATIONS,
   LICENCES,
   LINKS,
-  LOG,
+  NOTE,
   NUMBERS,
   SUBSYSTEMS,
   TEAM,
   USE_CASES,
 } from '@/lib/content';
-import { canDiscussFunding, canNameToken } from '@/lib/phase';
+import { atLeast, canDiscussFunding, canNameToken } from '@/lib/phase';
 
 const PART_NAME = new Map(SUBSYSTEMS.map((s) => [s.id, s.name]));
 
@@ -46,8 +44,8 @@ export default function Page() {
             </p>
             <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed text-alu-2">
               Orbie is built so that cannot happen. The CAD, the firmware and the
-              failures are public. Three hardware generations, ten units built by
-              hand, and a build log with the bad days still in it.
+              failures are public. Three hardware generations and ten units built
+              by hand, in the open.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a
@@ -57,16 +55,10 @@ export default function Page() {
                 SEE WHAT IS INSIDE
               </a>
               <a
-                href="#interface"
+                href={LINKS.docs}
                 className="border border-line-lit px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-alu-2 transition hover:border-ember hover:text-ember"
               >
-                DRIVE IT WITH CURL
-              </a>
-              <a
-                href="#log"
-                className="border border-line-lit px-6 py-3.5 text-[12px] font-600 tracking-[0.14em] text-alu-2 transition hover:border-ember hover:text-ember"
-              >
-                READ THE BUILD LOG
+                READ THE DOCS
               </a>
             </div>
           </div>
@@ -147,70 +139,9 @@ export default function Page() {
           <BodyMap />
         </section>
 
-        {/* ── The interface ────────────────────────────────────── */}
-        <section id="interface" className="border-t border-line py-20">
-          <SectionLabel n="03">THE INTERFACE</SectionLabel>
-          <h2 className="max-w-[26ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
-            Anything that can read a JPEG can drive this robot.
-          </h2>
-          <p className="mt-6 max-w-[62ch] text-[15px] leading-relaxed text-alu-2">
-            Every route is a GET. No SDK, no account, no cloud in the middle — the
-            robot runs its own web server and answers to a shell, a browser bar, or
-            any language that can make an HTTP request. The heavy thinking happens
-            wherever you send the frames.
-          </p>
-
-          <div className="mt-12 grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[560px] border-collapse text-[14px]">
-                <tbody>
-                  {ENDPOINTS.map((e) => (
-                    <tr key={e.route} className="border-b border-line align-top">
-                      <td className="w-[210px] py-4 pr-6">
-                        <code className="text-[13px] text-ember">{e.route}</code>
-                      </td>
-                      <td className="py-4 pr-6">
-                        <span className="block text-alu">{e.does}</span>
-                        {e.note && (
-                          <span className="mt-1.5 block text-[13px] leading-relaxed text-alu-3">
-                            {e.note}
-                          </span>
-                        )}
-                        <code className="mt-2 block text-[11px] leading-relaxed break-all text-alu-3">
-                          → {e.returns}
-                        </code>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div>
-              <pre className="regmark relative overflow-x-auto border border-line bg-panel/70 p-6 text-[12.5px] leading-relaxed text-alu-2">
-                <code>{EXAMPLE}</code>
-              </pre>
-              <p className="mt-6 max-w-[46ch] text-[15px] leading-relaxed text-alu-2">
-                That is the entire integration surface. Point <code className="text-alu-3">/capture</code>{' '}
-                at whatever model you like, decide something, and call{' '}
-                <code className="text-alu-3">/motor</code>. The robot only has to be
-                honest about what it sees and reliable about what it does.
-              </p>
-              <p className="mt-4 max-w-[46ch] text-[13px] leading-relaxed text-alu-3">
-                Routes are read from the published firmware, in
-                <code className="px-1">Firmware/components/camera/camera_server.c</code>
-                — check them there rather than taking this page&rsquo;s word for it. Not
-                every route has been verified on hardware yet; the ones we have run are
-                distance, the face and the camera. There is no mDNS name on this build,
-                so you reach it by IP.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* ── What you could build ─────────────────────────────── */}
         <section id="build" className="border-t border-line py-20">
-          <SectionLabel n="04">WHAT YOU COULD BUILD</SectionLabel>
+          <SectionLabel n="03">WHAT YOU COULD BUILD</SectionLabel>
           <h2 className="max-w-[26ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
             A camera, a laser, a thermometer and wheels, with nothing locked.
           </h2>
@@ -222,8 +153,8 @@ export default function Page() {
           </p>
           <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-alu-2">
             Most of what follows is a few lines against{' '}
-            <a href="#interface" className="text-alu underline decoration-line-lit underline-offset-4 hover:decoration-ember">
-              the endpoints above
+            <a href={LINKS.docs} className="text-alu underline decoration-line-lit underline-offset-4 hover:decoration-ember">
+              the HTTP interface
             </a>
             . The ones marked &ldquo;a term project&rdquo; are where you would open
             the CAD or the firmware instead.
@@ -235,7 +166,7 @@ export default function Page() {
 
         {/* ── Generations ──────────────────────────────────────── */}
         <section id="generations" className="border-t border-line py-20">
-          <SectionLabel n="05">THREE GENERATIONS</SectionLabel>
+          <SectionLabel n="04">THREE GENERATIONS</SectionLabel>
           <h2 className="max-w-[22ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
             Built three times, in the open, since July 2025.
           </h2>
@@ -267,56 +198,9 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── Build log ────────────────────────────────────────── */}
-        <section id="log" className="border-t border-line py-20">
-          <SectionLabel n="06">THE RECEIPTS</SectionLabel>
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-            <h2 className="max-w-[26ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
-              Including every day it did not work.
-            </h2>
-            <p className="max-w-[46ch] text-[15px] leading-relaxed text-alu-2">
-              1,299 messages between 21 July 2025 and 29 March 2026, with 355
-              photographs, 27 videos, six CAD assemblies and three PCB layouts
-              attached. Never fewer than a hundred messages in a month. Quoted
-              verbatim, dates as sent.
-            </p>
-          </div>
-
-          <ol className="mt-12 border-t border-line">
-            {LOG.map((e, i) => (
-              <li
-                key={`${e.when}-${i}`}
-                className="grid gap-2 border-b border-line py-5 md:grid-cols-[130px_120px_1fr] md:gap-8"
-              >
-                <span className="text-[11px] tracking-[0.14em] text-ember">{e.when}</span>
-                <span className="text-[11px] tracking-[0.1em] text-alu-3">{e.who}</span>
-                <span className="flex items-start gap-3 text-[15px] leading-relaxed text-alu-2">
-                  <span
-                    aria-hidden
-                    className={[
-                      'mt-2 h-1.5 w-1.5 shrink-0 rounded-full',
-                      e.kind === 'snag' ? 'bg-alu-3' : e.kind === 'win' ? 'bg-ember' : 'bg-line-lit',
-                    ].join(' ')}
-                  />
-                  <span>&ldquo;{e.line}&rdquo;</span>
-                </span>
-              </li>
-            ))}
-          </ol>
-
-          <p className="mt-8 max-w-[62ch] text-[15px] leading-relaxed text-alu-2">
-            Nine months in, someone in the group wrote:{' '}
-            <span className="text-alu">
-              &ldquo;We have to show how hard we have been working on this project, save each
-              prototype to show how many iterations we had to do to get it done.&rdquo;
-            </span>{' '}
-            This section is that, kept.
-          </p>
-        </section>
-
         {/* ── Open, and what that costs us to say honestly ─────── */}
         <section id="open" className="border-t border-line py-20">
-          <SectionLabel n="07">WHAT OPEN MEANS HERE</SectionLabel>
+          <SectionLabel n="05">WHAT OPEN MEANS HERE</SectionLabel>
           <div className="grid gap-12 lg:grid-cols-[1.05fr_1fr]">
             <div>
               <h2 className="max-w-[22ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
@@ -379,34 +263,9 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── The gaps ─────────────────────────────────────────── */}
-        <section id="gaps" className="border-t border-line py-20">
-          <SectionLabel n="08">WHAT IS NOT TRUE YET</SectionLabel>
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
-            <div>
-              <h2 className="max-w-[20ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
-                The list we would rather you heard from us.
-              </h2>
-              <p className="mt-6 max-w-[48ch] text-[15px] leading-relaxed text-alu-2">
-                Every one of these is findable by anyone who looks. Found and
-                explained reads as an ordinary state of affairs; found and
-                unmentioned reads as concealment. We would rather write it down.
-              </p>
-            </div>
-            <ul className="space-y-px bg-line">
-              {GAPS.map((g) => (
-                <li key={g} className="flex gap-4 bg-ground p-5">
-                  <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-alu-3" />
-                  <span className="text-[14px] leading-relaxed text-alu-2">{g}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
         {/* ── Who is behind it ─────────────────────────────────── */}
         <section id="who" className="border-t border-line py-20">
-          <SectionLabel n="09">WHO IS BEHIND IT</SectionLabel>
+          <SectionLabel n="06">WHO IS BEHIND IT</SectionLabel>
           <div className="grid gap-12 lg:grid-cols-[1.05fr_1fr]">
             <div>
               <h2 className="max-w-[22ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
@@ -474,11 +333,71 @@ export default function Page() {
 
         {/* ── Follow ───────────────────────────────────────────── */}
         <section id="follow" className="border-t border-line py-20">
-          <SectionLabel n="10">FOLLOW THE BUILD</SectionLabel>
+          <SectionLabel n="07">FOLLOW THE BUILD</SectionLabel>
           <h2 className="mb-12 max-w-[24ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
             The next generation gets built in public too.
           </h2>
           <XFeed />
+        </section>
+
+        {/* ── A note from Ashok ────────────────────────────────── */}
+        <section id="note" className="border-t border-line py-20">
+          <SectionLabel n="08">A NOTE FROM ASHOK</SectionLabel>
+          <div
+            className={[
+              'grid gap-10',
+              NOTE.photo ? 'lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start' : '',
+            ].join(' ')}
+          >
+            <div>
+              {NOTE.body.map((para) => (
+                <p
+                  key={para.slice(0, 24)}
+                  className="mt-5 max-w-[56ch] font-display text-2xl leading-[1.3] font-500 text-alu first:mt-0 md:text-3xl"
+                >
+                  {para}
+                </p>
+              ))}
+              <p className="mt-8 text-[12px] tracking-[0.16em] text-alu-3">
+                &mdash; <span className="text-ember">{NOTE.signature.toUpperCase()}</span>
+                {' · '}
+                {NOTE.where.toUpperCase()}
+              </p>
+            </div>
+            {NOTE.photo && (
+              <figure className="regmark relative border border-line bg-panel p-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={NOTE.photo}
+                  alt={NOTE.photoAlt}
+                  className="aspect-[4/5] w-full object-cover"
+                  loading="lazy"
+                />
+                <figcaption className="px-2 pt-3 pb-1 text-[10px] tracking-[0.16em] text-alu-3">
+                  {NOTE.photoAlt.toUpperCase()}
+                </figcaption>
+              </figure>
+            )}
+          </div>
+        </section>
+
+        {/* ── FAQ ──────────────────────────────────────────────── */}
+        <section id="faq" className="border-t border-line py-20">
+          <SectionLabel n="09">FAQ</SectionLabel>
+          <h2 className="max-w-[22ch] font-display text-4xl font-700 leading-[1.06] text-alu md:text-5xl">
+            The questions we get asked.
+          </h2>
+          <dl className="mt-12 border-t border-line">
+            {FAQ.filter((f) => !('gate' in f) || atLeast(f.gate)).map((f) => (
+              <div
+                key={f.q}
+                className="grid gap-3 border-b border-line py-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] md:gap-10"
+              >
+                <dt className="font-display text-xl font-600 leading-snug text-alu">{f.q}</dt>
+                <dd className="max-w-[62ch] text-[15px] leading-relaxed text-alu-2">{f.a}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
       </main>
 
@@ -499,8 +418,8 @@ export default function Page() {
           <nav className="flex flex-wrap gap-6 text-[12px] tracking-[0.14em]">
             <a href={LINKS.x} className="text-alu-2 hover:text-ember">@ORBIE_ROBOT</a>
             <a href={LINKS.github} className="text-alu-2 hover:text-ember">GITHUB</a>
-            <a href="#log" className="text-alu-2 hover:text-ember">BUILD LOG</a>
-            <a href="#gaps" className="text-alu-2 hover:text-ember">WHAT IS NOT TRUE YET</a>
+            <a href={LINKS.docs} className="text-alu-2 hover:text-ember">DOCS</a>
+            <a href="#faq" className="text-alu-2 hover:text-ember">FAQ</a>
             <a href="/brand" className="text-alu-2 hover:text-ember">BRAND</a>
           </nav>
         </div>

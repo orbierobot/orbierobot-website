@@ -39,9 +39,9 @@ export function StatusBar() {
           <span>GEN <span className="text-alu-2">V3</span></span>
         </div>
         <nav className="flex items-center gap-4 text-[11px] tracking-[0.14em]">
-          <a href="#body" className="hidden text-alu-2 hover:text-ember sm:inline">BODY</a>
-          <a href="#build" className="hidden text-alu-2 hover:text-ember sm:inline">BUILD</a>
-          <a href="#log" className="text-alu-2 hover:text-ember">LOG</a>
+          <a href="/#body" className="hidden text-alu-2 hover:text-ember sm:inline">BODY</a>
+          <a href="/#build" className="hidden text-alu-2 hover:text-ember sm:inline">BUILD</a>
+          <a href="/#faq" className="text-alu-2 hover:text-ember">FAQ</a>
           <a href="https://github.com/orbierobot" className="text-alu-2 hover:text-ember">
             REPO
           </a>

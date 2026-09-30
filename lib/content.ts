@@ -11,7 +11,9 @@
  *   - No number appears here that nobody can check. The reservation count and the
  *     app-install figures circulate in our own materials with no confirmed
  *     provenance; until someone sources them they stay off the site.
- *   - Nothing is described as finished that is not. See GAPS.
+ *   - Nothing is described as finished that is not.
+ *   - FAQ answers and the founder's note are Ashok's words, confirmed by him
+ *     before they ship. Do not paraphrase them into something he did not say.
  */
 
 export const LINKS = {
@@ -21,6 +23,10 @@ export const LINKS = {
   espRoll: 'https://www.instructables.com/ESP-ROLL-Build-a-Spherical-Self-balancing-Robot-Wi/',
   maxImagination: 'https://www.instructables.com/member/Max+Imagination/',
   s60sc: 'https://github.com/s60sc/ESP32-CAM_MJPEG2SD',
+  /* The HTTP interface lives in the docs, off the front page, on purpose:
+   * the presentation site is for people deciding whether to care, the docs
+   * are for people deciding what to build. */
+  docs: '/docs/interface/',
 } as const;
 
 /* ── The machine ──────────────────────────────────────────────────────────
@@ -218,75 +224,6 @@ export const SUBSYSTEMS: Subsystem[] = [
       'everywhere, which is most of what "repairable" actually means.',
   },
 ];
-
-/* ── The interface ────────────────────────────────────────────────────────
- * Read straight out of the published firmware
- * (Firmware/components/camera/camera_server.c), not from anyone's memory.
- * Every route is a GET, which is the whole point: the robot is drivable from a
- * shell, a browser bar, or any language that can make an HTTP request.
- *
- * This is the section that recruits builders. A film makes someone want one; a
- * copy-pasteable curl makes them want to build something tonight.
- */
-export const ENDPOINTS = [
-  {
-    route: 'GET /capture',
-    does: 'A single still, as JPEG.',
-    returns: 'image/jpeg',
-    note: 'The one to point a vision model at. No firmware changes needed.',
-  },
-  {
-    route: 'GET /stream',
-    does: 'Live MJPEG.',
-    returns: 'multipart/x-mixed-replace',
-    note: 'Drop it straight into an <img src>.',
-  },
-  {
-    route: 'GET /status',
-    does: 'Every sensor, once.',
-    returns: '{"distance":37,"temp_ambient":45.0,"temp_object":39.8,"laser":false,"drive":0,"turn":0}',
-    note: 'Distance in millimetres, temperatures in °C.',
-  },
-  {
-    route: 'GET /motor?drive=&turn=',
-    does: 'Drive and steer.',
-    returns: 'ok',
-    note: 'Differential drive — the two wheels run against each other to turn.',
-  },
-  {
-    route: 'GET /laser',
-    does: 'Toggles the laser.',
-    returns: 'LASER_ON / LASER_OFF',
-    note: 'One call, no argument. The cat does not need an API key.',
-  },
-  {
-    route: 'GET /face?expr=',
-    does: 'Puts an expression on the display.',
-    returns: 'ok / unknown expr',
-    note: 'bliss · center · down · happy · heart · left · love · neutral · right · up',
-  },
-  {
-    route: 'GET /beep',
-    does: 'Speaker test tone.',
-    returns: 'ok',
-    note: '',
-  },
-  {
-    route: 'GET /ota/update',
-    does: 'Push new firmware over the air.',
-    returns: '{"state":"...","percent":0,"message":"..."}',
-    note: 'With /ota/info, /ota/status and /ota/rollback. You can brick-proof your own experiments.',
-  },
-] as const;
-
-/* The three lines that make the point. Kept short enough to actually retype. */
-export const EXAMPLE = `# the robot prints its IP on boot — no mDNS on this build yet
-ORBIE=http://192.168.1.42
-
-curl -s $ORBIE/capture -o frame.jpg            # what does it see?
-curl -s $ORBIE/status                          # what does it feel?
-curl -s "$ORBIE/motor?drive=40&turn=0"         # go and have a look
-curl -s "$ORBIE/face?expr=happy"               # and be pleased about it`;
 
 /* ── What it is for ───────────────────────────────────────────────────────
  * Deliberately ordinary. The robot is unusual; the reasons to want one should
@@ -499,106 +436,6 @@ export const GENERATIONS = [
   },
 ] as const;
 
-/* ── Build log ────────────────────────────────────────────────────────────
- * Verbatim from the chat, dates are message timestamps. The failures are here
- * on purpose: a build log with no bad days is a brochure.
- */
-export const LOG = [
-  {
-    when: '21 Jul 2025',
-    who: 'Ashok Jaiswal',
-    line: 'Can you make the below thing? All mechanical, PCBA and firmware code is available in the video description.',
-    kind: 'start',
-  },
-  {
-    when: '22 Aug 2025',
-    who: 'Lalith Kumar',
-    line: 'So, the speaker is working, but, the sound is too low.',
-    kind: 'snag',
-  },
-  {
-    when: '26 Aug 2025',
-    who: 'Lalith Kumar',
-    line: 'This firmware was given to be run on ESP-IDF, and it worked great.',
-    kind: 'win',
-  },
-  {
-    when: '9 Sep 2025',
-    who: 'Ashok Jaiswal',
-    line:
-      'We have to show how hard we have been working on this project, save each prototype to ' +
-      'show how many iterations we had to do to get it done.',
-    kind: 'start',
-  },
-  {
-    when: '16 Sep 2025',
-    who: 'Lalith Kumar',
-    line:
-      'Many parts were not fitting inside the plastic because of dimension, tolerance issues.',
-    kind: 'snag',
-  },
-  {
-    when: '17 Sep 2025',
-    who: 'Prithu Hazarika',
-    line: 'The problem is that in the 3-D printed parts, the motors and the PCB do not fit. It’s a lot of hassle.',
-    kind: 'snag',
-  },
-  {
-    when: '18 Sep 2025',
-    who: 'Sumit Dandekar',
-    line: 'We received wrong part number DRV8834 instead of DRV8833.',
-    kind: 'snag',
-  },
-  {
-    when: '18 Sep 2025',
-    who: 'Prithu Hazarika',
-    line: 'We assembled one device today, using a lot of tape, glue, and adhesives.',
-    kind: 'win',
-  },
-  {
-    when: '14 Oct 2025',
-    who: 'Lalith Kumar',
-    line: 'We are currently assembling the first unit, its going fine but, we faced a couple of issues which are resolvable.',
-    kind: 'win',
-  },
-  {
-    when: '20 Oct 2025',
-    who: 'Prithu Hazarika',
-    line: 'Due to Diwali holidays there has been some delay.',
-    kind: 'snag',
-  },
-  {
-    when: '19 Dec 2025',
-    who: 'Prithu Hazarika',
-    line: 'The display for now we are thinking Monochrome-DotMatrix.',
-    kind: 'start',
-  },
-  {
-    when: '9 Feb 2026',
-    who: 'Ajay',
-    line: 'Head is visually misaligned due to broken ribs which will guide it.',
-    kind: 'snag',
-  },
-  {
-    when: '12 Feb 2026',
-    who: 'Ajay',
-    line: 'Head tilt issue is resolved, now it aligned perfectly.',
-    kind: 'win',
-  },
-  {
-    when: '24 Feb 2026',
-    who: 'Prithu Hazarika',
-    line: 'The display finally worked yesterday 👍🏼',
-    kind: 'win',
-  },
-  {
-    when: '24 Mar 2026',
-    who: 'Prithu Hazarika',
-    line: 'In the current prototype, centre of gravity is a known issue.',
-    kind: 'snag',
-  },
-] as const;
-
 /* ── Licences ─────────────────────────────────────────────────────────────
  * Status is deliberately honest. The repositories are public but carry no
  * licence file, which means default copyright applies and nobody may legally
@@ -632,19 +469,6 @@ export const LICENCES = [
   },
 ] as const;
 
-/* ── What is not true yet ─────────────────────────────────────────────────
- * The most persuasive section on the site, and the cheapest to write.
- */
-export const GAPS = [
-  'V1 carries no open licence and is not cleared for commercial use. It replicates ESP-ROLL under CC BY-NC-SA, and whether V2 and V3 are legally independent designs is a question for a lawyer, not for us.',
-  'Contributor copyright has not been transferred. Ayva Labs paid for the work, so Ayva holds the copyright by default. Moving it takes a legal step, not a decision.',
-  'Nobody outside the team has built one from the published files. Until someone has, we do not know whether the repository is genuinely buildable.',
-  'The centre of gravity on the current prototype is a known unsolved problem.',
-  'Ambient noise on the microphone is not good enough yet.',
-  'The ESP-IDF firmware advertises no mDNS name, so you reach the robot by IP. The older Arduino reference build still announces itself as pawme.local — the rename has not reached the firmware.',
-  'There is no gathering place that is not X. A forum or chat is owed to anyone who wants to contribute.',
-] as const;
-
 export const TEAM = [
   'Ashok Jaiswal',
   'Prithu Hazarika',
@@ -662,4 +486,56 @@ export const NUMBERS = [
   { n: '355', label: 'photographs, dated' },
   { n: '6', label: 'people' },
   { n: '$0', label: 'subscription, ever' },
+] as const;
+
+/* ── A note from Ashok ────────────────────────────────────────────────────
+ * First person, signed. Drafted from his own answers on the 30 Sep 2026 call
+ * with the launch team; every fact in it is something he said there.
+ * `photo` stays undefined until a real bench photograph is in /public/media —
+ * the section renders without the figure rather than with a broken image.
+ */
+export const NOTE = {
+  body: [
+    'I am a software engineer who kept ending up in hardware: a media centre ' +
+      'funded on Indiegogo, a yogurt machine that COVID killed, an AI toy for ' +
+      'children that I patented and licensed. Friends with kids kept asking for ' +
+      'the same thing for their pets.',
+    'Orbie is my first robot. In a year or two I want it in 10,000 homes, ' +
+      'learning what the dog did to it. Then 100,000.',
+  ],
+  signature: 'Ashok Jaiswal',
+  where: 'Hong Kong',
+  photo: undefined as string | undefined,
+  photoAlt: 'Ashok at the bench with a V3 unit',
+} as const;
+
+/* ── FAQ ──────────────────────────────────────────────────────────────────
+ * The objections the page does not otherwise answer. Short, and no claim in
+ * here that the rest of the site does not already stand behind.
+ *
+ * `gate` hides a question until the launch phase allows the vocabulary —
+ * see lib/phase.ts. The token question is the only gated one.
+ */
+export const FAQ = [
+  {
+    q: 'Can I buy one?',
+    a: 'Not yet. Orbie is still a prototype. The files to build one are public now; assembled units come later.',
+  },
+  {
+    q: 'Does it need the internet?',
+    a: 'No. It runs on your home Wi-Fi and serves its own web page. The internet only matters if you point it at an AI model that lives online.',
+  },
+  {
+    q: 'Where does the footage go?',
+    a: 'Nowhere, unless you send it somewhere. Frames leave the robot only when you or your software ask for them. There is no Orbie cloud.',
+  },
+  {
+    q: 'What if Ayva Labs shuts down?',
+    a: 'The robot keeps working. It never depended on a server, and the CAD, firmware and documentation stay public under open licences.',
+  },
+  {
+    q: 'What is the token for?',
+    a: 'It funds engineering and production, so the project does not have to sell equity or take on an investor who can steer it.',
+    gate: 'genesis' as const,
+  },
 ] as const;
